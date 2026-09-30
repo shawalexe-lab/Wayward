@@ -18,29 +18,17 @@
 
   <style>
 
-    /* =========================
-       WAYWARD
-       ========================= */
-
     :root {
       --black: #0c0c0b;
       --deep-black: #090908;
       --charcoal: #151412;
-
       --bone: #d2c6ae;
       --bone-bright: #ddd1ba;
       --bone-muted: #918674;
-
       --red: #7b2820;
-
       --line: #302d28;
       --line-light: #554e43;
     }
-
-
-    /* =========================
-       RESET
-       ========================= */
 
     * {
       box-sizing: border-box;
@@ -55,19 +43,11 @@
 
     body {
       min-height: 100vh;
-
       overflow-x: hidden;
-
       background: var(--black);
-
       color: var(--bone);
-
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
+      font-family: Georgia, "Times New Roman", serif;
     }
-
 
     /* =========================
        HEADER
@@ -76,93 +56,60 @@
     header {
       position: relative;
       z-index: 10;
-
       height: 78px;
-
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       padding: 0 7vw;
-
       background: var(--black);
-
-      border-bottom:
-        1px solid
-        var(--line);
+      border-bottom: 1px solid var(--line);
     }
 
     .brand {
       color: var(--bone);
-
       font-size: 1.25rem;
       font-weight: 400;
-
       letter-spacing: 0.34em;
-
       text-transform: uppercase;
     }
 
     nav {
       display: flex;
       align-items: center;
-
       gap: 42px;
     }
 
     nav a {
       color: var(--bone-muted);
-
       text-decoration: none;
-
       text-transform: uppercase;
-
       letter-spacing: 0.22em;
-
       font-size: 0.7rem;
-
-      transition:
-        color 0.2s ease;
+      transition: color 0.2s ease;
     }
 
     nav a:hover {
       color: var(--bone);
     }
 
-
     /* =========================
        HERO
        ========================= */
 
     .hero {
-      min-height:
-        calc(100vh - 78px);
-
+      min-height: calc(100vh - 78px);
       display: grid;
-
-      grid-template-columns:
-        1.05fr
-        0.95fr;
-
+      grid-template-columns: 1.05fr 0.95fr;
       background: var(--black);
     }
 
-
-    /* =========================
-       ARTIFACT
-       ========================= */
-
     .artifact {
       position: relative;
-
       min-width: 0;
-
       overflow: hidden;
-
       display: flex;
       align-items: center;
       justify-content: center;
-
       padding: 4vw;
 
       background:
@@ -176,52 +123,31 @@
 
     .wayward-artifact {
       display: block;
-
-      width:
-        min(
-          500px,
-          88%
-        );
-
+      width: min(500px, 88%);
       max-height: 78vh;
-
       height: auto;
-
       object-fit: contain;
 
       filter:
         contrast(0.98)
         brightness(0.91);
 
-      transform:
-        rotate(-0.7deg);
+      transform: rotate(-0.7deg);
     }
 
     .artifact-note {
       position: absolute;
-
       left: 7vw;
       bottom: 34px;
-
       color: var(--bone-muted);
-
       font-size: 0.61rem;
-
       letter-spacing: 0.24em;
-
       text-transform: uppercase;
     }
 
-
-    /* =========================
-       HERO COPY
-       ========================= */
-
     .hero-copy {
       position: relative;
-
       min-width: 0;
-
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -243,9 +169,7 @@
     .eyebrow {
       width: 42px;
       height: 2px;
-
       margin-bottom: 32px;
-
       background: var(--red);
     }
 
@@ -260,17 +184,13 @@
         );
 
       font-weight: 400;
-
       line-height: 0.92;
-
       letter-spacing: 0.13em;
-
       text-transform: uppercase;
     }
 
     .motto {
       margin-top: 36px;
-
       color: var(--bone);
 
       font-size:
@@ -281,44 +201,24 @@
         );
 
       letter-spacing: 0.4em;
-
       line-height: 1.7;
-
       text-transform: uppercase;
     }
 
     .intro {
       max-width: 450px;
-
       margin-top: 27px;
-
       color: var(--bone-muted);
-
       font-size: 0.98rem;
-
       line-height: 1.85;
     }
 
-
-    /* =========================
-       ENTER
-       ========================= */
-
     .enter {
-      position: relative;
-
       display: inline-flex;
-
       align-items: center;
-
       width: fit-content;
-
       margin-top: 38px;
-
-      padding:
-        15px
-        0
-        11px;
+      padding: 15px 0 11px;
 
       color: var(--bone);
 
@@ -327,11 +227,8 @@
         var(--line-light);
 
       text-decoration: none;
-
       text-transform: uppercase;
-
       letter-spacing: 0.27em;
-
       font-size: 0.67rem;
 
       transition:
@@ -341,44 +238,217 @@
 
     .enter span {
       margin-left: 17px;
-
       color: var(--red);
-
-      transition:
-        transform 0.2s ease;
+      transition: transform 0.2s ease;
     }
 
     .enter:hover {
       color: var(--bone-bright);
-
-      border-color:
-        var(--bone-muted);
+      border-color: var(--bone-muted);
     }
 
     .enter:hover span {
-      transform:
-        translateX(4px);
+      transform: translateX(4px);
     }
 
+    /* =========================
+       ABOUT WAYWARD
+       ========================= */
+
+    .about {
+      position: relative;
+
+      padding:
+        130px
+        9vw
+        150px;
+
+      border-top:
+        1px solid
+        var(--line);
+
+      background:
+        linear-gradient(
+          180deg,
+          #0b0b0a 0%,
+          #10100e 50%,
+          #0c0c0b 100%
+        );
+    }
+
+    .about-inner {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+    }
+
+    .section-number {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+
+      color: var(--bone-muted);
+
+      font-size: 0.62rem;
+      letter-spacing: 0.3em;
+
+      text-transform: uppercase;
+    }
+
+    .section-number::after {
+      content: "";
+      display: block;
+      width: 48px;
+      height: 1px;
+      background: var(--red);
+    }
+
+    .about-statement {
+      max-width: 850px;
+
+      margin-top: 55px;
+
+      color: var(--bone-bright);
+
+      font-size:
+        clamp(
+          2.2rem,
+          4.5vw,
+          4.8rem
+        );
+
+      font-weight: 400;
+
+      line-height: 1.13;
+
+      letter-spacing: -0.015em;
+    }
+
+    .about-statement em {
+      color: var(--bone-muted);
+      font-style: normal;
+    }
+
+    .about-body {
+      display: grid;
+
+      grid-template-columns:
+        0.75fr
+        1.25fr;
+
+      gap: 90px;
+
+      margin-top: 100px;
+    }
+
+    .about-label {
+      color: var(--bone-muted);
+
+      font-size: 0.62rem;
+
+      letter-spacing: 0.28em;
+
+      line-height: 1.8;
+
+      text-transform: uppercase;
+    }
+
+    .about-copy {
+      max-width: 620px;
+    }
+
+    .about-copy p {
+      color: #aaa08d;
+
+      font-size: 1.05rem;
+
+      line-height: 1.95;
+    }
+
+    .about-copy p + p {
+      margin-top: 28px;
+    }
+
+    .carry {
+      position: relative;
+
+      margin-top: 75px;
+
+      padding:
+        42px
+        0
+        0;
+
+      border-top:
+        1px solid
+        var(--line);
+    }
+
+    .carry-mark {
+      position: absolute;
+      top: -5px;
+      left: 0;
+
+      width: 36px;
+      height: 9px;
+
+      background: var(--black);
+    }
+
+    .carry-mark::after {
+      content: "";
+
+      position: absolute;
+      top: 4px;
+      left: 0;
+
+      width: 36px;
+      height: 1px;
+
+      background: var(--red);
+    }
+
+    .carry p {
+      color: var(--bone);
+
+      font-size:
+        clamp(
+          1.4rem,
+          2.4vw,
+          2rem
+        );
+
+      line-height: 1.5;
+
+      letter-spacing: 0.03em;
+    }
+
+    .carry span {
+      display: block;
+
+      margin-top: 13px;
+
+      color: var(--bone-muted);
+
+      font-size: 0.68rem;
+
+      letter-spacing: 0.24em;
+
+      text-transform: uppercase;
+    }
 
     /* =========================
        MOBILE
        ========================= */
 
-    @media
-    (max-width: 760px) {
+    @media (max-width: 760px) {
 
       header {
         height: 64px;
-
-        padding:
-          0
-          22px;
+        padding: 0 22px;
       }
 
       .brand {
         font-size: 0.94rem;
-
         letter-spacing: 0.29em;
       }
 
@@ -392,25 +462,15 @@
 
       nav a:last-child {
         display: block;
-
         font-size: 0.62rem;
-
         letter-spacing: 0.2em;
       }
 
-
-      /* HERO STACK */
-
       .hero {
         min-height: auto;
-
         display: flex;
-
         flex-direction: column;
       }
-
-
-      /* ARTIFACT */
 
       .artifact {
         min-height: 42vh;
@@ -430,31 +490,18 @@
       }
 
       .wayward-artifact {
-        width:
-          min(
-            300px,
-            78vw
-          );
-
+        width: min(300px, 78vw);
         max-height: 38vh;
-
         object-fit: contain;
-
-        transform:
-          rotate(-0.7deg);
+        transform: rotate(-0.7deg);
       }
 
       .artifact-note {
         left: 24px;
         bottom: 16px;
-
         font-size: 0.55rem;
-
         letter-spacing: 0.22em;
       }
-
-
-      /* COPY */
 
       .hero-copy {
         min-height: 50vh;
@@ -475,7 +522,6 @@
 
       .eyebrow {
         width: 39px;
-
         margin-bottom: 30px;
       }
 
@@ -490,64 +536,107 @@
           );
 
         line-height: 0.95;
-
         letter-spacing: 0.075em;
-
         white-space: nowrap;
       }
 
       .motto {
         margin-top: 31px;
-
         font-size: 0.8rem;
-
         letter-spacing: 0.3em;
-
         line-height: 1.7;
       }
 
       .intro {
         max-width: 340px;
-
         margin-top: 24px;
-
         font-size: 0.94rem;
-
         line-height: 1.85;
       }
 
       .enter {
         margin-top: 31px;
-
-        padding:
-          13px
-          0
-          10px;
-
+        padding: 13px 0 10px;
         font-size: 0.64rem;
-
         letter-spacing: 0.25em;
+      }
+
+      /* ABOUT MOBILE */
+
+      .about {
+        padding:
+          95px
+          25px
+          110px;
+      }
+
+      .section-number {
+        font-size: 0.56rem;
+        letter-spacing: 0.27em;
+      }
+
+      .section-number::after {
+        width: 36px;
+      }
+
+      .about-statement {
+        margin-top: 42px;
+
+        font-size:
+          clamp(
+            2.15rem,
+            10vw,
+            3.2rem
+          );
+
+        line-height: 1.17;
+      }
+
+      .about-body {
+        display: block;
+        margin-top: 70px;
+      }
+
+      .about-label {
+        margin-bottom: 27px;
+        font-size: 0.56rem;
+      }
+
+      .about-copy p {
+        font-size: 0.98rem;
+        line-height: 1.9;
+      }
+
+      .about-copy p + p {
+        margin-top: 25px;
+      }
+
+      .carry {
+        margin-top: 58px;
+        padding-top: 34px;
+      }
+
+      .carry p {
+        font-size: 1.45rem;
+      }
+
+      .carry span {
+        margin-top: 12px;
+        font-size: 0.59rem;
+        line-height: 1.7;
       }
     }
 
-
-    /* =========================
-       VERY SMALL PHONES
-       ========================= */
-
-    @media
-    (max-width: 390px) {
+    @media (max-width: 390px) {
 
       h1 {
         font-size: 2.85rem;
-
         letter-spacing: 0.06em;
       }
 
       .wayward-artifact {
         width: 275px;
       }
-
     }
 
   </style>
@@ -592,9 +681,6 @@
 
   <main class="hero">
 
-
-    <!-- WAYWARD ARTIFACT -->
-
     <section class="artifact">
 
       <img
@@ -610,8 +696,6 @@
     </section>
 
 
-    <!-- WAYWARD INTRO -->
-
     <section class="hero-copy">
 
       <div class="eyebrow"></div>
@@ -625,9 +709,9 @@
       </div>
 
       <p class="intro">
-        A Horde community built on shared effort,
-        mutual support, and the belief that the road
-        is better traveled together.
+        Not every road is walked alone.
+        Wayward is a company of Horde players
+        built around the people beside you.
       </p>
 
       <a
@@ -644,8 +728,84 @@
 
     </section>
 
-
   </main>
+
+
+  <!-- ABOUT -->
+
+  <section
+    class="about"
+    id="about"
+  >
+
+    <div class="about-inner">
+
+      <div class="section-number">
+        01 — Wayward
+      </div>
+
+      <h2 class="about-statement">
+        No one asks where your road began.
+        <em>Only where you're going next.</em>
+      </h2>
+
+
+      <div class="about-body">
+
+        <div class="about-label">
+          A company of the Horde
+        </div>
+
+
+        <div class="about-copy">
+
+          <p>
+            Wayward is built for players who want
+            something more personal than another name
+            above their character and something less
+            rigid than a guild that tells them how
+            they have to play.
+          </p>
+
+          <p>
+            We dungeon. We explore. We gather,
+            craft, fight, trade, roleplay and help
+            one another get where we're going.
+            Different people will find different
+            reasons to stay. The company is what
+            connects them.
+          </p>
+
+          <p>
+            You don't have to arrive with a story
+            already written. You don't have to fit
+            someone else's mold. What matters is
+            showing up, contributing and becoming
+            someone the people beside you can count on.
+          </p>
+
+
+          <div class="carry">
+
+            <div class="carry-mark"></div>
+
+            <p>
+              Everyone carries something.
+            </p>
+
+            <span>
+              No passenger stays a passenger forever.
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
 
 
 </body>
