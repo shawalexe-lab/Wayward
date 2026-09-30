@@ -72,7 +72,7 @@
     nav {
       display: flex;
       align-items: center;
-      gap: 42px;
+      gap: 34px;
     }
 
     nav a {
@@ -261,6 +261,14 @@
       background: var(--red);
     }
 
+    .about-inner,
+    .company-inner,
+    .share-inner,
+    .mark-inner {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+    }
+
 
     /* =========================
        01 — WAYWARD
@@ -278,13 +286,6 @@
           #10100e 50%,
           #0c0c0b 100%
         );
-    }
-
-    .about-inner,
-    .company-inner,
-    .share-inner {
-      width: min(1100px, 100%);
-      margin: 0 auto;
     }
 
     .about-statement {
@@ -570,9 +571,6 @@
       line-height: 1.9;
     }
 
-
-    /* LEDGER */
-
     .ledger {
       position: relative;
 
@@ -665,9 +663,6 @@
       color: var(--bone-muted);
     }
 
-
-    /* WHY THE SHARE EXISTS */
-
     .share-purpose {
       display: grid;
 
@@ -729,9 +724,6 @@
       color: var(--red);
     }
 
-
-    /* GRACE */
-
     .grace {
       position: relative;
 
@@ -774,9 +766,6 @@
       line-height: 1.55;
     }
 
-
-    /* SHARE CLOSING */
-
     .share-close {
       margin-top: 125px;
 
@@ -807,6 +796,214 @@
       color: var(--bone-muted);
 
       font-size: 0.57rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+    }
+
+
+    /* =========================
+       04 — THE MARK
+       ========================= */
+
+    .mark {
+      position: relative;
+
+      padding: 145px 9vw 165px;
+
+      overflow: hidden;
+
+      border-top: 1px solid var(--line);
+
+      background:
+        linear-gradient(
+          180deg,
+          #090908 0%,
+          #0d0c0a 48%,
+          #090908 100%
+        );
+    }
+
+    .mark-heading {
+      max-width: 760px;
+
+      margin-top: 55px;
+
+      color: var(--bone-bright);
+
+      font-size: clamp(2.4rem, 5vw, 5rem);
+      font-weight: 400;
+      line-height: 1.08;
+    }
+
+    .mark-heading span {
+      color: var(--bone-muted);
+    }
+
+    .mark-stage {
+      display: grid;
+
+      grid-template-columns:
+        1.05fr
+        0.95fr;
+
+      gap: 95px;
+
+      align-items: center;
+
+      margin-top: 105px;
+    }
+
+    .feather-stage {
+      position: relative;
+
+      min-height: 620px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          ellipse at center,
+          #191612 0%,
+          #11100e 52%,
+          #090908 78%
+        );
+    }
+
+    .feather-stage::after {
+      content: "THE FEATHER";
+
+      position: absolute;
+
+      left: 28px;
+      bottom: 25px;
+
+      color: #635b4f;
+
+      font-size: 0.53rem;
+      letter-spacing: 0.3em;
+    }
+
+    .wayward-feather {
+      display: block;
+
+      width: min(430px, 78%);
+      max-height: 540px;
+      height: auto;
+
+      object-fit: contain;
+
+      filter:
+        contrast(0.97)
+        brightness(0.9);
+
+      transform: rotate(0.6deg);
+    }
+
+    .mark-copy {
+      max-width: 510px;
+    }
+
+    .mark-label {
+      color: var(--bone-muted);
+
+      font-size: 0.58rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+    }
+
+    .mark-copy h3 {
+      margin-top: 23px;
+
+      color: var(--bone);
+
+      font-size: clamp(1.65rem, 3vw, 2.7rem);
+      font-weight: 400;
+      line-height: 1.35;
+    }
+
+    .mark-copy p {
+      margin-top: 28px;
+
+      color: #aaa08d;
+
+      font-size: 1rem;
+      line-height: 1.95;
+    }
+
+    .token {
+      position: relative;
+
+      margin-top: 58px;
+      padding-top: 38px;
+
+      border-top: 1px solid var(--line);
+    }
+
+    .token::before {
+      content: "";
+
+      position: absolute;
+
+      top: -1px;
+      left: 0;
+
+      width: 42px;
+      height: 1px;
+
+      background: var(--red);
+    }
+
+    .token-label {
+      color: var(--bone-muted);
+
+      font-size: 0.56rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+    }
+
+    .token p {
+      margin-top: 20px;
+
+      color: var(--bone);
+
+      font-size: 1.15rem;
+      line-height: 1.8;
+    }
+
+    .mark-close {
+      margin-top: 125px;
+
+      padding-top: 62px;
+
+      border-top: 1px solid var(--line-light);
+    }
+
+    .mark-close p {
+      max-width: 900px;
+
+      color: var(--bone-bright);
+
+      font-size: clamp(2rem, 4.3vw, 4.1rem);
+      font-weight: 400;
+      line-height: 1.16;
+    }
+
+    .mark-close span {
+      color: var(--bone-muted);
+    }
+
+    .mark-close small {
+      display: block;
+
+      margin-top: 32px;
+
+      color: var(--bone-muted);
+
+      font-size: 0.56rem;
       letter-spacing: 0.28em;
       text-transform: uppercase;
     }
@@ -1180,6 +1377,102 @@
         line-height: 1.7;
       }
 
+
+      /* MARK */
+
+      .mark {
+        padding: 105px 25px 120px;
+      }
+
+      .mark-heading {
+        margin-top: 42px;
+
+        font-size: clamp(2.35rem, 10.5vw, 3.45rem);
+        line-height: 1.12;
+      }
+
+      .mark-stage {
+        display: flex;
+        flex-direction: column;
+
+        gap: 60px;
+
+        margin-top: 72px;
+      }
+
+      .feather-stage {
+        width: calc(100% + 50px);
+
+        min-height: 430px;
+
+        margin-left: -25px;
+      }
+
+      .feather-stage::after {
+        left: 25px;
+        bottom: 20px;
+
+        font-size: 0.48rem;
+      }
+
+      .wayward-feather {
+        width: min(310px, 74vw);
+        max-height: 370px;
+      }
+
+      .mark-copy {
+        max-width: 100%;
+      }
+
+      .mark-label {
+        font-size: 0.53rem;
+      }
+
+      .mark-copy h3 {
+        margin-top: 20px;
+
+        font-size: 1.75rem;
+        line-height: 1.4;
+      }
+
+      .mark-copy p {
+        margin-top: 24px;
+
+        font-size: 0.96rem;
+        line-height: 1.9;
+      }
+
+      .token {
+        margin-top: 48px;
+        padding-top: 33px;
+      }
+
+      .token-label {
+        font-size: 0.52rem;
+      }
+
+      .token p {
+        font-size: 1.05rem;
+        line-height: 1.8;
+      }
+
+      .mark-close {
+        margin-top: 90px;
+        padding-top: 48px;
+      }
+
+      .mark-close p {
+        font-size: clamp(2rem, 9.5vw, 3rem);
+        line-height: 1.18;
+      }
+
+      .mark-close small {
+        margin-top: 27px;
+
+        font-size: 0.52rem;
+        line-height: 1.7;
+      }
+
     }
 
 
@@ -1200,6 +1493,10 @@
           1fr;
 
         gap: 10px 15px;
+      }
+
+      .wayward-feather {
+        width: 280px;
       }
 
     }
@@ -1231,6 +1528,10 @@
 
       <a href="#share">
         The Share
+      </a>
+
+      <a href="#mark">
+        The Mark
       </a>
 
       <a href="#join">
@@ -1522,8 +1823,6 @@
       </p>
 
 
-      <!-- LEDGER -->
-
       <div class="ledger">
 
 
@@ -1582,11 +1881,8 @@
 
         </div>
 
-
       </div>
 
-
-      <!-- PURPOSE -->
 
       <div class="share-purpose">
 
@@ -1627,8 +1923,6 @@
       </div>
 
 
-      <!-- GRACE -->
-
       <div class="grace">
 
         <div class="grace-label">
@@ -1646,8 +1940,6 @@
       </div>
 
 
-      <!-- CLOSING -->
-
       <div class="share-close">
 
         <p>
@@ -1659,6 +1951,111 @@
 
         <small>
           The Company provides because the Company contributes.
+        </small>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- 04 — THE MARK -->
+
+  <section class="mark" id="mark">
+
+    <div class="mark-inner">
+
+      <div class="section-number">
+        04 — The Mark
+      </div>
+
+
+      <h2 class="mark-heading">
+        Some things are recognized.
+        <span>
+          Others are given.
+        </span>
+      </h2>
+
+
+      <div class="mark-stage">
+
+
+        <!-- PHYSICAL FEATHER -->
+
+        <div class="feather-stage">
+
+          <img
+            class="wayward-feather"
+            src="wayward-feather.png"
+            alt="A worn ruffled feather tied with rough cord, carried as a token of membership in Wayward"
+          >
+
+        </div>
+
+
+        <!-- MEANING -->
+
+        <div class="mark-copy">
+
+          <div class="mark-label">
+            The Wayward Mark
+          </div>
+
+          <h3>
+            A lantern.
+            A feather.
+            A road still ahead.
+          </h3>
+
+          <p>
+            The lantern is Wayward's mark:
+            something carried into the dark,
+            not a promise that the road ahead
+            will be easy.
+          </p>
+
+          <p>
+            Beneath it hangs a worn feather.
+            Weathered. Imperfect. Still moving.
+            No two roads leave the same marks
+            on the people who walk them.
+          </p>
+
+
+          <div class="token">
+
+            <div class="token-label">
+              The Feather
+            </div>
+
+            <p>
+              When a Wayfarer becomes Company,
+              a Ruffled Feather is given to them.
+              It is ordinary by design.
+              Its worth comes from the people
+              who understand what it means.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="mark-close">
+
+        <p>
+          You don't carry the mark because you joined.
+          <span>
+            You carry it because you stayed.
+          </span>
+        </p>
+
+        <small>
+          Given by a Hand. Carried by the Company.
         </small>
 
       </div>
