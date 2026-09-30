@@ -9,7 +9,6 @@
   <title>Wayward | WoW Forever</title>
 
   <style>
-
     :root {
       --black: #0c0c0b;
       --deep-black: #090908;
@@ -41,7 +40,6 @@
       font-family: Georgia, "Times New Roman", serif;
     }
 
-
     /* =========================
        HEADER
        ========================= */
@@ -50,13 +48,10 @@
       position: relative;
       z-index: 10;
       height: 78px;
-
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       padding: 0 7vw;
-
       background: var(--black);
       border-bottom: 1px solid var(--line);
     }
@@ -72,7 +67,7 @@
     nav {
       display: flex;
       align-items: center;
-      gap: 34px;
+      gap: 42px;
     }
 
     nav a {
@@ -88,17 +83,14 @@
       color: var(--bone);
     }
 
-
     /* =========================
        HERO
        ========================= */
 
     .hero {
       min-height: calc(100vh - 78px);
-
       display: grid;
       grid-template-columns: 1.05fr 0.95fr;
-
       background: var(--black);
     }
 
@@ -106,13 +98,10 @@
       position: relative;
       min-width: 0;
       overflow: hidden;
-
       display: flex;
       align-items: center;
       justify-content: center;
-
       padding: 4vw;
-
       background:
         radial-gradient(
           ellipse at 52% 47%,
@@ -124,17 +113,13 @@
 
     .wayward-artifact {
       display: block;
-
       width: min(500px, 88%);
       max-height: 78vh;
       height: auto;
-
       object-fit: contain;
-
       filter:
         contrast(0.98)
         brightness(0.91);
-
       transform: rotate(-0.7deg);
     }
 
@@ -142,9 +127,7 @@
       position: absolute;
       left: 7vw;
       bottom: 34px;
-
       color: var(--bone-muted);
-
       font-size: 0.61rem;
       letter-spacing: 0.24em;
       text-transform: uppercase;
@@ -153,13 +136,10 @@
     .hero-copy {
       position: relative;
       min-width: 0;
-
       display: flex;
       flex-direction: column;
       justify-content: center;
-
       padding: 9vw 8vw 9vw 6vw;
-
       background:
         radial-gradient(
           ellipse at 0% 48%,
@@ -171,28 +151,22 @@
     .eyebrow {
       width: 42px;
       height: 2px;
-
       margin-bottom: 32px;
-
       background: var(--red);
     }
 
     h1 {
       color: var(--bone-bright);
-
       font-size: clamp(3.4rem, 6.4vw, 7rem);
       font-weight: 400;
       line-height: 0.92;
-
       letter-spacing: 0.13em;
       text-transform: uppercase;
     }
 
     .motto {
       margin-top: 36px;
-
       color: var(--bone);
-
       font-size: clamp(0.82rem, 1.1vw, 1.08rem);
       letter-spacing: 0.4em;
       line-height: 1.7;
@@ -202,9 +176,7 @@
     .intro {
       max-width: 450px;
       margin-top: 27px;
-
       color: var(--bone-muted);
-
       font-size: 0.98rem;
       line-height: 1.85;
     }
@@ -212,16 +184,11 @@
     .enter {
       display: inline-flex;
       align-items: center;
-
       width: fit-content;
       margin-top: 38px;
-
       padding: 15px 0 11px;
-
       color: var(--bone);
-
       border-bottom: 1px solid var(--line-light);
-
       text-decoration: none;
       text-transform: uppercase;
       letter-spacing: 0.27em;
@@ -233,7 +200,6 @@
       color: var(--red);
     }
 
-
     /* =========================
        SHARED
        ========================= */
@@ -242,9 +208,7 @@
       display: flex;
       align-items: center;
       gap: 18px;
-
       color: var(--bone-muted);
-
       font-size: 0.62rem;
       letter-spacing: 0.3em;
       text-transform: uppercase;
@@ -252,12 +216,9 @@
 
     .section-number::after {
       content: "";
-
       display: block;
-
       width: 48px;
       height: 1px;
-
       background: var(--red);
     }
 
@@ -269,16 +230,13 @@
       margin: 0 auto;
     }
 
-
     /* =========================
        01 — WAYWARD
        ========================= */
 
     .about {
       padding: 130px 9vw 150px;
-
       border-top: 1px solid var(--line);
-
       background:
         linear-gradient(
           180deg,
@@ -291,13 +249,10 @@
     .about-statement {
       max-width: 850px;
       margin-top: 55px;
-
       color: var(--bone-bright);
-
       font-size: clamp(2.2rem, 4.5vw, 4.8rem);
       font-weight: 400;
       line-height: 1.13;
-
       letter-spacing: -0.015em;
     }
 
@@ -309,14 +264,12 @@
     .about-body {
       display: grid;
       grid-template-columns: 0.75fr 1.25fr;
-
       gap: 90px;
       margin-top: 100px;
     }
 
     .about-label {
       color: var(--bone-muted);
-
       font-size: 0.62rem;
       letter-spacing: 0.28em;
       line-height: 1.8;
@@ -329,7 +282,6 @@
 
     .about-copy p {
       color: #aaa08d;
-
       font-size: 1.05rem;
       line-height: 1.95;
     }
@@ -340,45 +292,35 @@
 
     .carry {
       position: relative;
-
       margin-top: 75px;
       padding-top: 42px;
-
       border-top: 1px solid var(--line);
     }
 
     .carry::before {
       content: "";
-
       position: absolute;
       top: -1px;
       left: 0;
-
       width: 38px;
       height: 1px;
-
       background: var(--red);
     }
 
     .carry p {
       color: var(--bone);
-
       font-size: clamp(1.4rem, 2.4vw, 2rem);
       line-height: 1.5;
     }
 
     .carry span {
       display: block;
-
       margin-top: 13px;
-
       color: var(--bone-muted);
-
       font-size: 0.68rem;
       letter-spacing: 0.24em;
       text-transform: uppercase;
     }
-
 
     /* =========================
        02 — THE COMPANY
@@ -386,18 +328,14 @@
 
     .company {
       padding: 140px 9vw 160px;
-
       border-top: 1px solid var(--line);
-
       background: var(--deep-black);
     }
 
     .company-heading {
       max-width: 760px;
       margin-top: 55px;
-
       color: var(--bone-bright);
-
       font-size: clamp(2.4rem, 5vw, 5rem);
       font-weight: 400;
       line-height: 1.05;
@@ -405,46 +343,35 @@
 
     .company-intro {
       max-width: 590px;
-
       margin: 40px 0 0 auto;
-
       color: var(--bone-muted);
-
       font-size: 1rem;
       line-height: 1.9;
     }
 
     .ranks {
       margin-top: 110px;
-
       border-top: 1px solid var(--line);
     }
 
     .rank {
       position: relative;
-
       display: grid;
       grid-template-columns: 95px 1fr 1.15fr;
-
       gap: 45px;
-
       padding: 52px 0;
-
       border-bottom: 1px solid var(--line);
     }
 
     .rank-number {
       padding-top: 7px;
-
       color: #5f584c;
-
       font-size: 0.62rem;
       letter-spacing: 0.25em;
     }
 
     .rank-name {
       color: var(--bone);
-
       font-size: clamp(1.7rem, 3vw, 2.8rem);
       font-weight: 400;
       letter-spacing: 0.04em;
@@ -452,23 +379,18 @@
 
     .rank-description {
       max-width: 460px;
-
       color: var(--bone-muted);
-
       font-size: 0.96rem;
       line-height: 1.85;
     }
 
     .rank-waylord::before {
       content: "";
-
       position: absolute;
       top: -1px;
       left: 0;
-
       width: 80px;
       height: 2px;
-
       background: var(--red);
     }
 
@@ -478,9 +400,7 @@
 
     .rank-hands .rank-name::after {
       content: " / few";
-
       color: #625a4e;
-
       font-size: 0.55rem;
       letter-spacing: 0.25em;
       text-transform: uppercase;
@@ -498,15 +418,12 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-
       gap: 40px;
-
       margin-top: 65px;
     }
 
     .company-close-label {
       color: var(--bone-muted);
-
       font-size: 0.59rem;
       letter-spacing: 0.25em;
       text-transform: uppercase;
@@ -514,13 +431,10 @@
 
     .company-close p {
       max-width: 600px;
-
       color: var(--bone);
-
       font-size: clamp(1.3rem, 2.3vw, 1.9rem);
       line-height: 1.55;
     }
-
 
     /* =========================
        03 — THE SHARE
@@ -528,13 +442,9 @@
 
     .share {
       position: relative;
-
       padding: 145px 9vw 165px;
-
       overflow: hidden;
-
       border-top: 1px solid var(--line);
-
       background:
         radial-gradient(
           ellipse at 80% 25%,
@@ -546,11 +456,8 @@
 
     .share-heading {
       max-width: 820px;
-
       margin-top: 55px;
-
       color: var(--bone-bright);
-
       font-size: clamp(2.5rem, 5.3vw, 5.2rem);
       font-weight: 400;
       line-height: 1.07;
@@ -562,54 +469,36 @@
 
     .share-intro {
       max-width: 590px;
-
       margin: 42px 0 0 auto;
-
       color: var(--bone-muted);
-
       font-size: 1rem;
       line-height: 1.9;
     }
 
     .ledger {
       position: relative;
-
       margin-top: 105px;
-
       border-top: 1px solid var(--line-light);
       border-bottom: 1px solid var(--line-light);
     }
 
     .ledger::before {
       content: "WAYWARD / COMMON LEDGER";
-
       position: absolute;
-
       top: -31px;
       right: 0;
-
       color: #554e43;
-
       font-size: 0.52rem;
       letter-spacing: 0.28em;
     }
 
     .ledger-row {
       display: grid;
-
-      grid-template-columns:
-        0.7fr
-        1fr
-        1.25fr;
-
+      grid-template-columns: 0.7fr 1fr 1.25fr;
       gap: 45px;
-
       align-items: center;
-
       min-height: 145px;
-
       padding: 34px 0;
-
       border-bottom: 1px solid var(--line);
     }
 
@@ -619,7 +508,6 @@
 
     .ledger-label {
       color: var(--bone-muted);
-
       font-size: 0.61rem;
       letter-spacing: 0.29em;
       text-transform: uppercase;
@@ -627,16 +515,13 @@
 
     .ledger-value {
       color: var(--bone-bright);
-
       font-size: clamp(1.6rem, 3vw, 2.8rem);
       font-weight: 400;
     }
 
     .ledger-note {
       max-width: 430px;
-
       color: var(--bone-muted);
-
       font-size: 0.91rem;
       line-height: 1.8;
     }
@@ -647,15 +532,11 @@
 
     .ledger-row.coin::before {
       content: "";
-
       position: absolute;
-
       top: -1px;
       left: 0;
-
       width: 85px;
       height: 2px;
-
       background: var(--red);
     }
 
@@ -665,19 +546,13 @@
 
     .share-purpose {
       display: grid;
-
-      grid-template-columns:
-        0.7fr
-        1.3fr;
-
+      grid-template-columns: 0.7fr 1.3fr;
       gap: 90px;
-
       margin-top: 100px;
     }
 
     .share-purpose-label {
       color: var(--bone-muted);
-
       font-size: 0.59rem;
       letter-spacing: 0.27em;
       line-height: 1.8;
@@ -690,7 +565,6 @@
 
     .share-purpose-copy p {
       color: #aaa08d;
-
       font-size: 1rem;
       line-height: 1.95;
     }
@@ -702,15 +576,12 @@
     .share-uses {
       display: flex;
       flex-wrap: wrap;
-
       gap: 10px 26px;
-
       margin-top: 38px;
     }
 
     .share-uses span {
       color: var(--bone-muted);
-
       font-size: 0.57rem;
       letter-spacing: 0.22em;
       text-transform: uppercase;
@@ -718,38 +589,29 @@
 
     .share-uses span::before {
       content: "—";
-
       margin-right: 8px;
-
       color: var(--red);
     }
 
     .grace {
       position: relative;
-
       margin-top: 90px;
       padding-top: 44px;
-
       border-top: 1px solid var(--line);
     }
 
     .grace::before {
       content: "";
-
       position: absolute;
-
       top: -1px;
       left: 0;
-
       width: 45px;
       height: 1px;
-
       background: var(--red);
     }
 
     .grace-label {
       color: var(--bone-muted);
-
       font-size: 0.56rem;
       letter-spacing: 0.27em;
       text-transform: uppercase;
@@ -757,28 +619,21 @@
 
     .grace p {
       max-width: 720px;
-
       margin-top: 25px;
-
       color: var(--bone);
-
       font-size: clamp(1.3rem, 2.4vw, 2rem);
       line-height: 1.55;
     }
 
     .share-close {
       margin-top: 125px;
-
       padding-top: 60px;
-
       border-top: 1px solid var(--line-light);
     }
 
     .share-close p {
       max-width: 900px;
-
       color: var(--bone-bright);
-
       font-size: clamp(2rem, 4.3vw, 4.2rem);
       font-weight: 400;
       line-height: 1.15;
@@ -790,16 +645,12 @@
 
     .share-close small {
       display: block;
-
       margin-top: 35px;
-
       color: var(--bone-muted);
-
       font-size: 0.57rem;
       letter-spacing: 0.28em;
       text-transform: uppercase;
     }
-
 
     /* =========================
        04 — THE MARK
@@ -807,30 +658,23 @@
 
     .mark {
       position: relative;
-
-      padding: 145px 9vw 165px;
-
+      padding: 145px 9vw 170px;
       overflow: hidden;
-
       border-top: 1px solid var(--line);
-
       background:
-        linear-gradient(
-          180deg,
-          #090908 0%,
-          #0d0c0a 48%,
-          #090908 100%
+        radial-gradient(
+          ellipse at 50% 35%,
+          #15130f 0%,
+          #0d0d0b 45%,
+          #090908 78%
         );
     }
 
     .mark-heading {
-      max-width: 760px;
-
+      max-width: 820px;
       margin-top: 55px;
-
       color: var(--bone-bright);
-
-      font-size: clamp(2.4rem, 5vw, 5rem);
+      font-size: clamp(2.5rem, 5.3vw, 5.2rem);
       font-weight: 400;
       line-height: 1.08;
     }
@@ -839,175 +683,141 @@
       color: var(--bone-muted);
     }
 
-    .mark-stage {
-      display: grid;
-
-      grid-template-columns:
-        1.05fr
-        0.95fr;
-
-      gap: 95px;
-
-      align-items: center;
-
-      margin-top: 105px;
-    }
-
-    .feather-stage {
+    .mark-visual {
       position: relative;
-
-      min-height: 620px;
-
       display: flex;
-      align-items: center;
       justify-content: center;
-
-      overflow: hidden;
-
+      align-items: center;
+      min-height: 620px;
+      margin-top: 90px;
+      padding: 55px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
       background:
         radial-gradient(
           ellipse at center,
-          #191612 0%,
-          #11100e 52%,
-          #090908 78%
+          #17140f 0%,
+          #100f0d 42%,
+          #0a0a09 75%
         );
     }
 
-    .feather-stage::after {
-      content: "THE FEATHER";
-
+    .mark-visual::before {
+      content: "";
       position: absolute;
-
-      left: 28px;
-      bottom: 25px;
-
-      color: #635b4f;
-
-      font-size: 0.53rem;
-      letter-spacing: 0.3em;
+      top: -1px;
+      left: 0;
+      width: 85px;
+      height: 2px;
+      background: var(--red);
     }
 
-    .wayward-feather {
+    .feather-image {
       display: block;
-
-      width: min(430px, 78%);
+      width: min(440px, 75%);
       max-height: 540px;
       height: auto;
-
       object-fit: contain;
-
       filter:
-        contrast(0.97)
-        brightness(0.9);
-
-      transform: rotate(0.6deg);
+        brightness(0.9)
+        contrast(1.03);
     }
 
-    .mark-copy {
-      max-width: 510px;
+    .mark-content {
+      display: grid;
+      grid-template-columns: 0.72fr 1.28fr;
+      gap: 90px;
+      margin-top: 95px;
     }
 
     .mark-label {
       color: var(--bone-muted);
-
-      font-size: 0.58rem;
+      font-size: 0.59rem;
       letter-spacing: 0.28em;
+      line-height: 1.8;
       text-transform: uppercase;
     }
 
+    .mark-copy {
+      max-width: 650px;
+    }
+
     .mark-copy h3 {
-      margin-top: 23px;
-
       color: var(--bone);
-
-      font-size: clamp(1.65rem, 3vw, 2.7rem);
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
       font-weight: 400;
-      line-height: 1.35;
+      line-height: 1.4;
     }
 
     .mark-copy p {
-      margin-top: 28px;
-
+      margin-top: 35px;
       color: #aaa08d;
-
       font-size: 1rem;
       line-height: 1.95;
     }
 
-    .token {
+    .mark-copy p + p {
+      margin-top: 27px;
+    }
+
+    .feather-story {
       position: relative;
-
-      margin-top: 58px;
-      padding-top: 38px;
-
+      margin-top: 80px;
+      padding-top: 45px;
       border-top: 1px solid var(--line);
     }
 
-    .token::before {
+    .feather-story::before {
       content: "";
-
       position: absolute;
-
       top: -1px;
       left: 0;
-
-      width: 42px;
+      width: 48px;
       height: 1px;
-
       background: var(--red);
     }
 
-    .token-label {
+    .feather-story-label {
       color: var(--bone-muted);
-
-      font-size: 0.56rem;
+      font-size: 0.57rem;
       letter-spacing: 0.28em;
       text-transform: uppercase;
     }
 
-    .token p {
-      margin-top: 20px;
-
+    .feather-story p {
+      max-width: 800px;
+      margin-top: 30px;
       color: var(--bone);
-
-      font-size: 1.15rem;
-      line-height: 1.8;
+      font-size: clamp(1.3rem, 2.4vw, 2rem);
+      line-height: 1.75;
     }
 
     .mark-close {
-      margin-top: 125px;
-
-      padding-top: 62px;
-
+      margin-top: 110px;
+      padding-top: 55px;
       border-top: 1px solid var(--line-light);
     }
 
     .mark-close p {
-      max-width: 900px;
-
+      max-width: 950px;
       color: var(--bone-bright);
-
-      font-size: clamp(2rem, 4.3vw, 4.1rem);
+      font-size: clamp(2.1rem, 4.6vw, 4.5rem);
       font-weight: 400;
-      line-height: 1.16;
+      line-height: 1.13;
     }
 
-    .mark-close span {
+    .mark-close p span {
       color: var(--bone-muted);
     }
 
     .mark-close small {
       display: block;
-
-      margin-top: 32px;
-
+      margin-top: 35px;
       color: var(--bone-muted);
-
-      font-size: 0.56rem;
+      font-size: 0.57rem;
       letter-spacing: 0.28em;
       text-transform: uppercase;
     }
-
 
     /* =========================
        MOBILE
@@ -1038,7 +848,6 @@
         font-size: 0.62rem;
       }
 
-
       /* HERO */
 
       .hero {
@@ -1049,7 +858,6 @@
 
       .artifact {
         min-height: 42vh;
-
         padding: 24px 18px 44px;
       }
 
@@ -1061,13 +869,11 @@
       .artifact-note {
         left: 24px;
         bottom: 16px;
-
         font-size: 0.55rem;
       }
 
       .hero-copy {
         min-height: 50vh;
-
         padding: 52px 25px 72px;
       }
 
@@ -1080,31 +886,25 @@
         font-size: clamp(2.9rem, 13.2vw, 4.35rem);
         line-height: 0.95;
         letter-spacing: 0.075em;
-
         white-space: nowrap;
       }
 
       .motto {
         margin-top: 31px;
-
         font-size: 0.8rem;
         letter-spacing: 0.3em;
       }
 
       .intro {
         max-width: 340px;
-
         margin-top: 24px;
-
         font-size: 0.94rem;
       }
 
       .enter {
         margin-top: 31px;
-
         font-size: 0.64rem;
       }
-
 
       /* SHARED */
 
@@ -1117,7 +917,6 @@
         width: 36px;
       }
 
-
       /* ABOUT */
 
       .about {
@@ -1126,7 +925,6 @@
 
       .about-statement {
         margin-top: 42px;
-
         font-size: clamp(2.15rem, 10vw, 3.2rem);
         line-height: 1.17;
       }
@@ -1164,7 +962,6 @@
         line-height: 1.7;
       }
 
-
       /* COMPANY */
 
       .company {
@@ -1173,14 +970,12 @@
 
       .company-heading {
         margin-top: 42px;
-
         font-size: clamp(2.4rem, 11vw, 3.5rem);
         line-height: 1.08;
       }
 
       .company-intro {
         margin-top: 35px;
-
         font-size: 0.96rem;
       }
 
@@ -1191,58 +986,47 @@
       .rank {
         display: grid;
         grid-template-columns: 38px 1fr;
-
         gap: 10px 17px;
-
         padding: 38px 0;
       }
 
       .rank-number {
         grid-column: 1;
         grid-row: 1 / span 2;
-
         font-size: 0.55rem;
       }
 
       .rank-name {
         grid-column: 2;
-
         font-size: 1.8rem;
       }
 
       .rank-description {
         grid-column: 2;
-
         margin-top: 8px;
-
         font-size: 0.92rem;
         line-height: 1.8;
       }
 
       .rank-hands .rank-name::after {
         display: block;
-
         margin-top: 8px;
-
         font-size: 0.48rem;
       }
 
       .company-close {
         display: block;
-
         margin-top: 55px;
       }
 
       .company-close-label {
         margin-bottom: 25px;
-
         font-size: 0.55rem;
       }
 
       .company-close p {
         font-size: 1.4rem;
       }
-
 
       /* SHARE */
 
@@ -1252,14 +1036,12 @@
 
       .share-heading {
         margin-top: 42px;
-
         font-size: clamp(2.35rem, 11vw, 3.6rem);
         line-height: 1.12;
       }
 
       .share-intro {
         margin-top: 34px;
-
         font-size: 0.96rem;
         line-height: 1.9;
       }
@@ -1272,46 +1054,34 @@
         top: -29px;
         left: 0;
         right: auto;
-
         font-size: 0.47rem;
       }
 
       .ledger-row {
         display: grid;
-
-        grid-template-columns:
-          92px
-          1fr;
-
+        grid-template-columns: 92px 1fr;
         gap: 11px 20px;
-
         min-height: 0;
-
         padding: 38px 0;
       }
 
       .ledger-label {
         grid-column: 1;
         grid-row: 1 / span 2;
-
         padding-top: 8px;
-
         font-size: 0.52rem;
         line-height: 1.6;
       }
 
       .ledger-value {
         grid-column: 2;
-
         font-size: 1.65rem;
         line-height: 1.25;
       }
 
       .ledger-note {
         grid-column: 2;
-
         margin-top: 7px;
-
         font-size: 0.88rem;
         line-height: 1.75;
       }
@@ -1322,13 +1092,11 @@
 
       .share-purpose {
         display: block;
-
         margin-top: 75px;
       }
 
       .share-purpose-label {
         margin-bottom: 28px;
-
         font-size: 0.54rem;
       }
 
@@ -1339,9 +1107,7 @@
 
       .share-uses {
         display: grid;
-
         gap: 15px;
-
         margin-top: 34px;
       }
 
@@ -1356,7 +1122,6 @@
 
       .grace p {
         margin-top: 22px;
-
         font-size: 1.35rem;
       }
 
@@ -1372,93 +1137,68 @@
 
       .share-close small {
         margin-top: 27px;
-
         font-size: 0.52rem;
         line-height: 1.7;
       }
 
-
       /* MARK */
 
       .mark {
-        padding: 105px 25px 120px;
+        padding: 105px 25px 125px;
       }
 
       .mark-heading {
         margin-top: 42px;
-
-        font-size: clamp(2.35rem, 10.5vw, 3.45rem);
+        font-size: clamp(2.35rem, 11vw, 3.6rem);
         line-height: 1.12;
       }
 
-      .mark-stage {
-        display: flex;
-        flex-direction: column;
-
-        gap: 60px;
-
-        margin-top: 72px;
+      .mark-visual {
+        min-height: 480px;
+        margin-top: 70px;
+        padding: 35px 15px;
       }
 
-      .feather-stage {
-        width: calc(100% + 50px);
-
-        min-height: 430px;
-
-        margin-left: -25px;
+      .feather-image {
+        width: min(320px, 88%);
+        max-height: 430px;
       }
 
-      .feather-stage::after {
-        left: 25px;
-        bottom: 20px;
-
-        font-size: 0.48rem;
-      }
-
-      .wayward-feather {
-        width: min(310px, 74vw);
-        max-height: 370px;
-      }
-
-      .mark-copy {
-        max-width: 100%;
+      .mark-content {
+        display: block;
+        margin-top: 70px;
       }
 
       .mark-label {
-        font-size: 0.53rem;
+        margin-bottom: 28px;
+        font-size: 0.54rem;
       }
 
       .mark-copy h3 {
-        margin-top: 20px;
-
         font-size: 1.75rem;
-        line-height: 1.4;
+        line-height: 1.45;
       }
 
       .mark-copy p {
-        margin-top: 24px;
-
+        margin-top: 27px;
         font-size: 0.96rem;
         line-height: 1.9;
       }
 
-      .token {
-        margin-top: 48px;
-        padding-top: 33px;
+      .feather-story {
+        margin-top: 65px;
+        padding-top: 36px;
       }
 
-      .token-label {
-        font-size: 0.52rem;
-      }
-
-      .token p {
-        font-size: 1.05rem;
-        line-height: 1.8;
+      .feather-story p {
+        margin-top: 25px;
+        font-size: 1.35rem;
+        line-height: 1.75;
       }
 
       .mark-close {
-        margin-top: 90px;
-        padding-top: 48px;
+        margin-top: 80px;
+        padding-top: 45px;
       }
 
       .mark-close p {
@@ -1468,13 +1208,10 @@
 
       .mark-close small {
         margin-top: 27px;
-
         font-size: 0.52rem;
         line-height: 1.7;
       }
-
     }
-
 
     @media (max-width: 390px) {
 
@@ -1488,25 +1225,23 @@
       }
 
       .ledger-row {
-        grid-template-columns:
-          80px
-          1fr;
-
+        grid-template-columns: 80px 1fr;
         gap: 10px 15px;
       }
 
-      .wayward-feather {
-        width: 280px;
+      .mark-visual {
+        min-height: 430px;
       }
 
+      .feather-image {
+        width: 90%;
+      }
     }
 
   </style>
 </head>
 
-
 <body>
-
 
   <!-- HEADER -->
 
@@ -1517,31 +1252,14 @@
     </div>
 
     <nav>
-
-      <a href="#about">
-        About
-      </a>
-
-      <a href="#company">
-        Company
-      </a>
-
-      <a href="#share">
-        The Share
-      </a>
-
-      <a href="#mark">
-        The Mark
-      </a>
-
-      <a href="#join">
-        Join
-      </a>
-
+      <a href="#about">About</a>
+      <a href="#company">Company</a>
+      <a href="#share">The Share</a>
+      <a href="#mark">The Mark</a>
+      <a href="#join">Join</a>
     </nav>
 
   </header>
-
 
   <!-- HERO -->
 
@@ -1552,7 +1270,7 @@
       <img
         class="wayward-artifact"
         src="wayward-mark.png.PNG"
-        alt="The Wayward Mark: an engraved lantern with a ruffled feather hanging beneath it"
+        alt="The Wayward Mark: a lantern with a ruffled feather hanging beneath it"
       >
 
       <div class="artifact-note">
@@ -1561,14 +1279,11 @@
 
     </section>
 
-
     <section class="hero-copy">
 
       <div class="eyebrow"></div>
 
-      <h1>
-        Wayward
-      </h1>
+      <h1>Wayward</h1>
 
       <div class="motto">
         Find your way.
@@ -1589,7 +1304,6 @@
 
   </main>
 
-
   <!-- 01 — WAYWARD -->
 
   <section class="about" id="about">
@@ -1602,18 +1316,14 @@
 
       <h2 class="about-statement">
         No one asks where your road began.
-        <em>
-          Only where you're going next.
-        </em>
+        <em>Only where you're going next.</em>
       </h2>
-
 
       <div class="about-body">
 
         <div class="about-label">
           A company of the Horde
         </div>
-
 
         <div class="about-copy">
 
@@ -1642,7 +1352,6 @@
             someone the people beside you can count on.
           </p>
 
-
           <div class="carry">
 
             <p>
@@ -1663,7 +1372,6 @@
 
   </section>
 
-
   <!-- 02 — THE COMPANY -->
 
   <section class="company" id="company">
@@ -1674,12 +1382,10 @@
         02 — The Company
       </div>
 
-
       <h2 class="company-heading">
-        Many roads.
+        Many roads.<br>
         One company.
       </h2>
-
 
       <p class="company-intro">
         Wayward isn't built around titles.
@@ -1688,15 +1394,11 @@
         together as the Company.
       </p>
 
-
       <div class="ranks">
-
 
         <div class="rank rank-waylord">
 
-          <div class="rank-number">
-            I
-          </div>
+          <div class="rank-number">I</div>
 
           <h3 class="rank-name">
             Waylord
@@ -1711,12 +1413,9 @@
 
         </div>
 
-
         <div class="rank rank-hands">
 
-          <div class="rank-number">
-            II
-          </div>
+          <div class="rank-number">II</div>
 
           <h3 class="rank-name">
             Hands
@@ -1732,12 +1431,9 @@
 
         </div>
 
-
         <div class="rank rank-company">
 
-          <div class="rank-number">
-            III
-          </div>
+          <div class="rank-number">III</div>
 
           <h3 class="rank-name">
             Company
@@ -1753,12 +1449,9 @@
 
         </div>
 
-
         <div class="rank rank-wayfarers">
 
-          <div class="rank-number">
-            IV
-          </div>
+          <div class="rank-number">IV</div>
 
           <h3 class="rank-name">
             Wayfarers
@@ -1775,7 +1468,6 @@
         </div>
 
       </div>
-
 
       <div class="company-close">
 
@@ -1795,7 +1487,6 @@
 
   </section>
 
-
   <!-- 03 — THE SHARE -->
 
   <section class="share" id="share">
@@ -1806,14 +1497,12 @@
         03 — The Share
       </div>
 
-
       <h2 class="share-heading">
         Everyone carries something.
         <span>
           Everyone draws from what we carry.
         </span>
       </h2>
-
 
       <p class="share-intro">
         The Share is Wayward's common store:
@@ -1822,9 +1511,7 @@
         its own.
       </p>
 
-
       <div class="ledger">
-
 
         <div class="ledger-row coin">
 
@@ -1843,7 +1530,6 @@
 
         </div>
 
-
         <div class="ledger-row">
 
           <div class="ledger-label">
@@ -1861,7 +1547,6 @@
           </div>
 
         </div>
-
 
         <div class="ledger-row wayfarer">
 
@@ -1883,13 +1568,11 @@
 
       </div>
 
-
       <div class="share-purpose">
 
         <div class="share-purpose-label">
           Where it goes
         </div>
-
 
         <div class="share-purpose-copy">
 
@@ -1906,22 +1589,18 @@
             move forward.
           </p>
 
-
           <div class="share-uses">
-
             <span>Crafting</span>
             <span>Consumables</span>
             <span>Equipment</span>
             <span>Events</span>
             <span>Professions</span>
             <span>Member aid</span>
-
           </div>
 
         </div>
 
       </div>
-
 
       <div class="grace">
 
@@ -1938,7 +1617,6 @@
         </p>
 
       </div>
-
 
       <div class="share-close">
 
@@ -1959,7 +1637,6 @@
 
   </section>
 
-
   <!-- 04 — THE MARK -->
 
   <section class="mark" id="mark">
@@ -1970,7 +1647,6 @@
         04 — The Mark
       </div>
 
-
       <h2 class="mark-heading">
         Some things are recognized.
         <span>
@@ -1978,34 +1654,32 @@
         </span>
       </h2>
 
+      <!--
+        IMPORTANT:
+        This filename exactly matches the file
+        currently in the GitHub repository.
+      -->
 
-      <div class="mark-stage">
+      <div class="mark-visual">
 
+        <img
+          class="feather-image"
+          src="wayward-feather.png.PNG"
+          alt="A worn ruffled feather carried by members of Wayward"
+        >
 
-        <!-- PHYSICAL FEATHER -->
+      </div>
 
-        <div class="feather-stage">
+      <div class="mark-content">
 
-          <img
-            class="wayward-feather"
-            src="wayward-feather.png"
-            alt="A worn ruffled feather tied with rough cord, carried as a token of membership in Wayward"
-          >
-
+        <div class="mark-label">
+          The Wayward Mark
         </div>
-
-
-        <!-- MEANING -->
 
         <div class="mark-copy">
 
-          <div class="mark-label">
-            The Wayward Mark
-          </div>
-
           <h3>
-            A lantern.
-            A feather.
+            A lantern. A feather.
             A road still ahead.
           </h3>
 
@@ -2023,27 +1697,25 @@
             on the people who walk them.
           </p>
 
-
-          <div class="token">
-
-            <div class="token-label">
-              The Feather
-            </div>
-
-            <p>
-              When a Wayfarer becomes Company,
-              a Ruffled Feather is given to them.
-              It is ordinary by design.
-              Its worth comes from the people
-              who understand what it means.
-            </p>
-
-          </div>
-
         </div>
 
       </div>
 
+      <div class="feather-story">
+
+        <div class="feather-story-label">
+          The Feather
+        </div>
+
+        <p>
+          When a Wayfarer becomes Company,
+          a Ruffled Feather is given to them.
+          It is ordinary by design.
+          Its worth comes from the people
+          who understand what it means.
+        </p>
+
+      </div>
 
       <div class="mark-close">
 
@@ -2063,7 +1735,6 @@
     </div>
 
   </section>
-
 
 </body>
 
