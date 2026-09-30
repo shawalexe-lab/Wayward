@@ -3,16 +3,8 @@
 
 <head>
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <meta
-    name="theme-color"
-    content="#0c0c0b"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0c0c0b">
 
   <title>Wayward | WoW Forever</title>
 
@@ -22,10 +14,13 @@
       --black: #0c0c0b;
       --deep-black: #090908;
       --charcoal: #151412;
+
       --bone: #d2c6ae;
       --bone-bright: #ddd1ba;
       --bone-muted: #918674;
+
       --red: #7b2820;
+
       --line: #302d28;
       --line-light: #554e43;
     }
@@ -44,10 +39,16 @@
     body {
       min-height: 100vh;
       overflow-x: hidden;
+
       background: var(--black);
       color: var(--bone);
-      font-family: Georgia, "Times New Roman", serif;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
     }
+
 
     /* =========================
        HEADER
@@ -56,20 +57,30 @@
     header {
       position: relative;
       z-index: 10;
+
       height: 78px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       padding: 0 7vw;
+
       background: var(--black);
-      border-bottom: 1px solid var(--line);
+
+      border-bottom:
+        1px solid
+        var(--line);
     }
 
     .brand {
       color: var(--bone);
+
       font-size: 1.25rem;
       font-weight: 400;
+
       letter-spacing: 0.34em;
+
       text-transform: uppercase;
     }
 
@@ -81,10 +92,14 @@
 
     nav a {
       color: var(--bone-muted);
+
       text-decoration: none;
       text-transform: uppercase;
+
       letter-spacing: 0.22em;
+
       font-size: 0.7rem;
+
       transition: color 0.2s ease;
     }
 
@@ -92,24 +107,38 @@
       color: var(--bone);
     }
 
+
     /* =========================
        HERO
        ========================= */
 
     .hero {
-      min-height: calc(100vh - 78px);
+      min-height:
+        calc(100vh - 78px);
+
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
+
+      grid-template-columns:
+        1.05fr
+        0.95fr;
+
       background: var(--black);
     }
 
+
+    /* ARTIFACT */
+
     .artifact {
       position: relative;
+
       min-width: 0;
+
       overflow: hidden;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       padding: 4vw;
 
       background:
@@ -123,31 +152,50 @@
 
     .wayward-artifact {
       display: block;
-      width: min(500px, 88%);
+
+      width:
+        min(
+          500px,
+          88%
+        );
+
       max-height: 78vh;
+
       height: auto;
+
       object-fit: contain;
 
       filter:
         contrast(0.98)
         brightness(0.91);
 
-      transform: rotate(-0.7deg);
+      transform:
+        rotate(-0.7deg);
     }
 
     .artifact-note {
       position: absolute;
+
       left: 7vw;
       bottom: 34px;
+
       color: var(--bone-muted);
+
       font-size: 0.61rem;
+
       letter-spacing: 0.24em;
+
       text-transform: uppercase;
     }
 
+
+    /* HERO COPY */
+
     .hero-copy {
       position: relative;
+
       min-width: 0;
+
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -169,7 +217,9 @@
     .eyebrow {
       width: 42px;
       height: 2px;
+
       margin-bottom: 32px;
+
       background: var(--red);
     }
 
@@ -184,13 +234,17 @@
         );
 
       font-weight: 400;
+
       line-height: 0.92;
+
       letter-spacing: 0.13em;
+
       text-transform: uppercase;
     }
 
     .motto {
       margin-top: 36px;
+
       color: var(--bone);
 
       font-size:
@@ -201,24 +255,36 @@
         );
 
       letter-spacing: 0.4em;
+
       line-height: 1.7;
+
       text-transform: uppercase;
     }
 
     .intro {
       max-width: 450px;
+
       margin-top: 27px;
+
       color: var(--bone-muted);
+
       font-size: 0.98rem;
+
       line-height: 1.85;
     }
 
     .enter {
       display: inline-flex;
       align-items: center;
+
       width: fit-content;
+
       margin-top: 38px;
-      padding: 15px 0 11px;
+
+      padding:
+        15px
+        0
+        11px;
 
       color: var(--bone);
 
@@ -228,31 +294,52 @@
 
       text-decoration: none;
       text-transform: uppercase;
-      letter-spacing: 0.27em;
-      font-size: 0.67rem;
 
-      transition:
-        color 0.2s ease,
-        border-color 0.2s ease;
+      letter-spacing: 0.27em;
+
+      font-size: 0.67rem;
     }
 
     .enter span {
       margin-left: 17px;
+
       color: var(--red);
-      transition: transform 0.2s ease;
     }
 
-    .enter:hover {
-      color: var(--bone-bright);
-      border-color: var(--bone-muted);
-    }
-
-    .enter:hover span {
-      transform: translateX(4px);
-    }
 
     /* =========================
-       ABOUT WAYWARD
+       SHARED SECTION STYLES
+       ========================= */
+
+    .section-number {
+      display: flex;
+      align-items: center;
+
+      gap: 18px;
+
+      color: var(--bone-muted);
+
+      font-size: 0.62rem;
+
+      letter-spacing: 0.3em;
+
+      text-transform: uppercase;
+    }
+
+    .section-number::after {
+      content: "";
+
+      display: block;
+
+      width: 48px;
+      height: 1px;
+
+      background: var(--red);
+    }
+
+
+    /* =========================
+       01 — WAYWARD
        ========================= */
 
     .about {
@@ -277,29 +364,13 @@
     }
 
     .about-inner {
-      width: min(1100px, 100%);
+      width:
+        min(
+          1100px,
+          100%
+        );
+
       margin: 0 auto;
-    }
-
-    .section-number {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-
-      color: var(--bone-muted);
-
-      font-size: 0.62rem;
-      letter-spacing: 0.3em;
-
-      text-transform: uppercase;
-    }
-
-    .section-number::after {
-      content: "";
-      display: block;
-      width: 48px;
-      height: 1px;
-      background: var(--red);
     }
 
     .about-statement {
@@ -325,6 +396,7 @@
 
     .about-statement em {
       color: var(--bone-muted);
+
       font-style: normal;
     }
 
@@ -385,6 +457,7 @@
 
     .carry-mark {
       position: absolute;
+
       top: -5px;
       left: 0;
 
@@ -398,6 +471,7 @@
       content: "";
 
       position: absolute;
+
       top: 4px;
       left: 0;
 
@@ -436,6 +510,239 @@
       text-transform: uppercase;
     }
 
+
+    /* =========================
+       02 — THE COMPANY
+       ========================= */
+
+    .company {
+      padding:
+        140px
+        9vw
+        160px;
+
+      border-top:
+        1px solid
+        var(--line);
+
+      background:
+        #090908;
+    }
+
+    .company-inner {
+      width:
+        min(
+          1100px,
+          100%
+        );
+
+      margin: 0 auto;
+    }
+
+    .company-heading {
+      max-width: 760px;
+
+      margin-top: 55px;
+
+      color: var(--bone-bright);
+
+      font-size:
+        clamp(
+          2.4rem,
+          5vw,
+          5rem
+        );
+
+      font-weight: 400;
+
+      line-height: 1.05;
+    }
+
+    .company-intro {
+      max-width: 590px;
+
+      margin:
+        40px
+        0
+        0
+        auto;
+
+      color: var(--bone-muted);
+
+      font-size: 1rem;
+
+      line-height: 1.9;
+    }
+
+
+    /* RANK STRUCTURE */
+
+    .ranks {
+      position: relative;
+
+      margin-top: 110px;
+
+      border-top:
+        1px solid
+        var(--line);
+    }
+
+    .rank {
+      display: grid;
+
+      grid-template-columns:
+        95px
+        1fr
+        1.15fr;
+
+      gap: 45px;
+
+      align-items: start;
+
+      padding:
+        52px
+        0;
+
+      border-bottom:
+        1px solid
+        var(--line);
+    }
+
+    .rank-number {
+      padding-top: 7px;
+
+      color: #5f584c;
+
+      font-size: 0.62rem;
+
+      letter-spacing: 0.25em;
+    }
+
+    .rank-name {
+      color: var(--bone);
+
+      font-size:
+        clamp(
+          1.7rem,
+          3vw,
+          2.8rem
+        );
+
+      font-weight: 400;
+
+      letter-spacing: 0.04em;
+    }
+
+    .rank-description {
+      max-width: 460px;
+
+      color: var(--bone-muted);
+
+      font-size: 0.96rem;
+
+      line-height: 1.85;
+    }
+
+
+    /* WAYLORD */
+
+    .rank-waylord {
+      position: relative;
+    }
+
+    .rank-waylord::before {
+      content: "";
+
+      position: absolute;
+
+      top: -1px;
+      left: 0;
+
+      width: 80px;
+      height: 2px;
+
+      background: var(--red);
+    }
+
+    .rank-waylord .rank-name {
+      color: var(--bone-bright);
+    }
+
+
+    /* HANDS */
+
+    .rank-hands .rank-name::after {
+      content: "  /  few";
+
+      color: #625a4e;
+
+      font-size: 0.55rem;
+
+      letter-spacing: 0.25em;
+
+      text-transform: uppercase;
+    }
+
+
+    /* COMPANY */
+
+    .rank-company .rank-name {
+      color: #c7bba5;
+    }
+
+
+    /* WAYFARERS */
+
+    .rank-wayfarers .rank-name {
+      color: var(--bone-muted);
+    }
+
+    .rank-wayfarers {
+      border-bottom:
+        1px solid
+        var(--line-light);
+    }
+
+
+    /* FINAL COMPANY LINE */
+
+    .company-close {
+      display: flex;
+
+      justify-content: space-between;
+      align-items: flex-start;
+
+      gap: 40px;
+
+      margin-top: 65px;
+    }
+
+    .company-close-label {
+      color: var(--bone-muted);
+
+      font-size: 0.59rem;
+
+      letter-spacing: 0.25em;
+
+      text-transform: uppercase;
+    }
+
+    .company-close p {
+      max-width: 600px;
+
+      color: var(--bone);
+
+      font-size:
+        clamp(
+          1.3rem,
+          2.3vw,
+          1.9rem
+        );
+
+      line-height: 1.55;
+    }
+
+
     /* =========================
        MOBILE
        ========================= */
@@ -444,11 +751,15 @@
 
       header {
         height: 64px;
-        padding: 0 22px;
+
+        padding:
+          0
+          22px;
       }
 
       .brand {
         font-size: 0.94rem;
+
         letter-spacing: 0.29em;
       }
 
@@ -462,13 +773,20 @@
 
       nav a:last-child {
         display: block;
+
         font-size: 0.62rem;
+
         letter-spacing: 0.2em;
       }
 
+
+      /* HERO */
+
       .hero {
         min-height: auto;
+
         display: flex;
+
         flex-direction: column;
       }
 
@@ -490,17 +808,22 @@
       }
 
       .wayward-artifact {
-        width: min(300px, 78vw);
+        width:
+          min(
+            300px,
+            78vw
+          );
+
         max-height: 38vh;
+
         object-fit: contain;
-        transform: rotate(-0.7deg);
       }
 
       .artifact-note {
         left: 24px;
         bottom: 16px;
+
         font-size: 0.55rem;
-        letter-spacing: 0.22em;
       }
 
       .hero-copy {
@@ -510,24 +833,15 @@
           52px
           25px
           72px;
-
-        background:
-          linear-gradient(
-            to bottom,
-            #0d0d0b 0%,
-            #0c0c0b 22%,
-            #0c0c0b 100%
-          );
       }
 
       .eyebrow {
         width: 39px;
+
         margin-bottom: 30px;
       }
 
       h1 {
-        max-width: 100%;
-
         font-size:
           clamp(
             2.9rem,
@@ -536,47 +850,57 @@
           );
 
         line-height: 0.95;
+
         letter-spacing: 0.075em;
+
         white-space: nowrap;
       }
 
       .motto {
         margin-top: 31px;
+
         font-size: 0.8rem;
+
         letter-spacing: 0.3em;
-        line-height: 1.7;
       }
 
       .intro {
         max-width: 340px;
+
         margin-top: 24px;
+
         font-size: 0.94rem;
+
         line-height: 1.85;
       }
 
       .enter {
         margin-top: 31px;
-        padding: 13px 0 10px;
+
         font-size: 0.64rem;
-        letter-spacing: 0.25em;
       }
 
-      /* ABOUT MOBILE */
+
+      /* SHARED */
+
+      .section-number {
+        font-size: 0.56rem;
+
+        letter-spacing: 0.27em;
+      }
+
+      .section-number::after {
+        width: 36px;
+      }
+
+
+      /* ABOUT */
 
       .about {
         padding:
           95px
           25px
           110px;
-      }
-
-      .section-number {
-        font-size: 0.56rem;
-        letter-spacing: 0.27em;
-      }
-
-      .section-number::after {
-        width: 36px;
       }
 
       .about-statement {
@@ -594,16 +918,19 @@
 
       .about-body {
         display: block;
+
         margin-top: 70px;
       }
 
       .about-label {
         margin-bottom: 27px;
+
         font-size: 0.56rem;
       }
 
       .about-copy p {
         font-size: 0.98rem;
+
         line-height: 1.9;
       }
 
@@ -613,6 +940,7 @@
 
       .carry {
         margin-top: 58px;
+
         padding-top: 34px;
       }
 
@@ -621,22 +949,134 @@
       }
 
       .carry span {
-        margin-top: 12px;
         font-size: 0.59rem;
+
         line-height: 1.7;
       }
+
+
+      /* COMPANY */
+
+      .company {
+        padding:
+          100px
+          25px
+          115px;
+      }
+
+      .company-heading {
+        margin-top: 42px;
+
+        font-size:
+          clamp(
+            2.4rem,
+            11vw,
+            3.5rem
+          );
+
+        line-height: 1.08;
+      }
+
+      .company-intro {
+        margin-top: 35px;
+
+        font-size: 0.96rem;
+
+        line-height: 1.9;
+      }
+
+      .ranks {
+        margin-top: 75px;
+      }
+
+      .rank {
+        display: grid;
+
+        grid-template-columns:
+          38px
+          1fr;
+
+        gap:
+          10px
+          17px;
+
+        padding:
+          38px
+          0;
+      }
+
+      .rank-number {
+        grid-column: 1;
+
+        grid-row:
+          1
+          / span 2;
+
+        padding-top: 7px;
+
+        font-size: 0.55rem;
+      }
+
+      .rank-name {
+        grid-column: 2;
+
+        font-size: 1.8rem;
+      }
+
+      .rank-description {
+        grid-column: 2;
+
+        margin-top: 8px;
+
+        font-size: 0.92rem;
+
+        line-height: 1.8;
+      }
+
+      .rank-waylord::before {
+        width: 54px;
+      }
+
+      .rank-hands .rank-name::after {
+        display: block;
+
+        margin-top: 8px;
+
+        font-size: 0.48rem;
+      }
+
+      .company-close {
+        display: block;
+
+        margin-top: 55px;
+      }
+
+      .company-close-label {
+        margin-bottom: 25px;
+
+        font-size: 0.55rem;
+      }
+
+      .company-close p {
+        font-size: 1.4rem;
+
+        line-height: 1.55;
+      }
     }
+
 
     @media (max-width: 390px) {
 
       h1 {
         font-size: 2.85rem;
+
         letter-spacing: 0.06em;
       }
 
       .wayward-artifact {
         width: 275px;
       }
+
     }
 
   </style>
@@ -660,8 +1100,8 @@
         About
       </a>
 
-      <a href="#people">
-        People
+      <a href="#company">
+        Company
       </a>
 
       <a href="#share">
@@ -731,7 +1171,7 @@
   </main>
 
 
-  <!-- ABOUT -->
+  <!-- 01 — WAYWARD -->
 
   <section
     class="about"
@@ -746,7 +1186,9 @@
 
       <h2 class="about-statement">
         No one asks where your road began.
-        <em>Only where you're going next.</em>
+        <em>
+          Only where you're going next.
+        </em>
       </h2>
 
 
@@ -794,12 +1236,156 @@
             </p>
 
             <span>
-              No passenger stays a passenger forever.
+              What we carry, we carry together.
             </span>
 
           </div>
 
         </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- 02 — THE COMPANY -->
+
+  <section
+    class="company"
+    id="company"
+  >
+
+    <div class="company-inner">
+
+      <div class="section-number">
+        02 — The Company
+      </div>
+
+
+      <h2 class="company-heading">
+        Few ranks.
+        Clear purpose.
+      </h2>
+
+
+      <p class="company-intro">
+        Wayward isn't built around titles.
+        Authority stays simple, responsibility
+        stays visible, and most of us stand
+        together as the Company.
+      </p>
+
+
+      <div class="ranks">
+
+
+        <!-- WAYLORD -->
+
+        <div class="rank rank-waylord">
+
+          <div class="rank-number">
+            I
+          </div>
+
+          <h3 class="rank-name">
+            Waylord
+          </h3>
+
+          <p class="rank-description">
+            One voice at the head of the Company.
+            The Waylord sets its direction, represents
+            Wayward and carries final responsibility
+            for where the road leads.
+          </p>
+
+        </div>
+
+
+        <!-- HANDS -->
+
+        <div class="rank rank-hands">
+
+          <div class="rank-number">
+            II
+          </div>
+
+          <h3 class="rank-name">
+            Hands
+          </h3>
+
+          <p class="rank-description">
+            A small circle trusted to act for the
+            Waylord and look after the Company.
+            Hands help lead events, welcome new
+            members, manage shared resources and
+            keep Wayward moving.
+          </p>
+
+        </div>
+
+
+        <!-- COMPANY -->
+
+        <div class="rank rank-company">
+
+          <div class="rank-number">
+            III
+          </div>
+
+          <h3 class="rank-name">
+            Company
+          </h3>
+
+          <p class="rank-description">
+            The body of Wayward. Full members who
+            have made their place among us and can
+            be counted on to contribute, participate
+            and stand beside the people carrying
+            the same mark.
+          </p>
+
+        </div>
+
+
+        <!-- WAYFARERS -->
+
+        <div class="rank rank-wayfarers">
+
+          <div class="rank-number">
+            IV
+          </div>
+
+          <h3 class="rank-name">
+            Wayfarers
+          </h3>
+
+          <p class="rank-description">
+            New arrivals traveling with Wayward.
+            A Wayfarer isn't beneath the Company;
+            they're finding their place within it.
+            Show up, take part and the distinction
+            doesn't last long.
+          </p>
+
+        </div>
+
+
+      </div>
+
+
+      <div class="company-close">
+
+        <div class="company-close-label">
+          The road inward
+        </div>
+
+        <p>
+          You arrive a Wayfarer.
+          You become Company by becoming
+          someone the Company would notice missing.
+        </p>
 
       </div>
 
