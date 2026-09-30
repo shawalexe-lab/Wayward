@@ -24,13 +24,11 @@
   <style>
 
     /* =========================================================
-       WAYWARD v2
-       DESIGN SYSTEM
+       WAYWARD v2.1
+       MOTION & ATMOSPHERE
        ========================================================= */
 
     :root {
-
-      /* COLOR */
 
       --black: #0a0a09;
       --black-deep: #070706;
@@ -47,9 +45,6 @@
 
       --line: #2e2b26;
       --line-strong: #514a40;
-
-
-      /* TYPOGRAPHY */
 
       --font-display:
         "Iowan Old Style",
@@ -73,14 +68,8 @@
         Arial,
         sans-serif;
 
-
-      /* CONTENT WIDTH */
-
       --content-max: 1120px;
       --measure: 640px;
-
-
-      /* SPACING */
 
       --space-1: 0.5rem;
       --space-2: 1rem;
@@ -90,9 +79,6 @@
       --space-6: 4.5rem;
       --space-7: 6.5rem;
       --space-8: 9rem;
-
-
-      /* TRANSITIONS */
 
       --ease:
         cubic-bezier(
@@ -116,17 +102,13 @@
 
     html {
       margin: 0;
-
       scroll-behavior: smooth;
-
       background: var(--black);
     }
 
     body {
       margin: 0;
-
       min-height: 100vh;
-
       overflow-x: hidden;
 
       background:
@@ -205,6 +187,67 @@
 
 
     /* =========================================================
+       GLOBAL REVEAL SYSTEM
+       ========================================================= */
+
+    .reveal {
+      opacity: 0;
+
+      transform:
+        translate3d(
+          0,
+          16px,
+          0
+        );
+
+      transition:
+        opacity
+        900ms
+        var(--ease),
+        transform
+        900ms
+        var(--ease);
+
+      transition-delay:
+        var(
+          --delay,
+          0ms
+        );
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+
+      transform:
+        translate3d(
+          0,
+          0,
+          0
+        );
+    }
+
+    .section-number::after {
+      transform-origin: left center;
+
+      transform:
+        scaleX(0);
+
+      transition:
+        transform
+        800ms
+        var(--ease);
+
+      transition-delay:
+        180ms;
+    }
+
+    .section-number.is-visible::after {
+      transform:
+        scaleX(1);
+    }
+
+
+    /* =========================================================
        HEADER
        ========================================================= */
 
@@ -250,6 +293,14 @@
 
       -webkit-backdrop-filter:
         blur(14px);
+
+      transition:
+        background
+        250ms
+        ease,
+        border-color
+        250ms
+        ease;
     }
 
     .brand {
@@ -309,28 +360,37 @@
       left: 0;
       bottom: 4px;
 
-      width: 0;
+      width: 100%;
       height: 1px;
 
       background: var(--red);
 
+      transform:
+        scaleX(0);
+
+      transform-origin:
+        left center;
+
       transition:
-        width
-        260ms
+        transform
+        300ms
         var(--ease);
     }
 
-    .site-nav a:hover {
+    .site-nav a:hover,
+    .site-nav a.active {
       color: var(--bone);
     }
 
-    .site-nav a:hover::after {
-      width: 100%;
+    .site-nav a:hover::after,
+    .site-nav a.active::after {
+      transform:
+        scaleX(1);
     }
 
 
     /* =========================================================
-       SHARED SECTION LANGUAGE
+       SHARED
        ========================================================= */
 
     .section-shell {
@@ -457,6 +517,47 @@
         );
     }
 
+    /* Extremely subtle lantern breathing light */
+
+    .hero-artifact::before {
+      content: "";
+
+      position: absolute;
+
+      width: 62%;
+      aspect-ratio: 1;
+
+      border-radius: 50%;
+
+      pointer-events: none;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(
+            126,
+            91,
+            47,
+            0.10
+          ) 0%,
+          rgba(
+            126,
+            91,
+            47,
+            0.025
+          ) 40%,
+          transparent 70%
+        );
+
+      opacity: 0.45;
+
+      animation:
+        lanternBreath
+        7s
+        ease-in-out
+        infinite;
+    }
+
     .hero-artifact::after {
       content: "";
 
@@ -479,6 +580,20 @@
         );
     }
 
+    @keyframes lanternBreath {
+
+      0%,
+      100% {
+        opacity: 0.34;
+        transform: scale(0.98);
+      }
+
+      50% {
+        opacity: 0.52;
+        transform: scale(1.02);
+      }
+    }
+
     .wayward-artifact {
       position: relative;
 
@@ -497,6 +612,40 @@
       filter:
         brightness(0.92)
         contrast(1.01);
+
+      opacity: 0;
+
+      transform:
+        translate3d(
+          0,
+          18px,
+          0
+        )
+        scale(0.985);
+
+      animation:
+        artifactEnter
+        1400ms
+        var(--ease)
+        150ms
+        forwards;
+
+      will-change: transform;
+    }
+
+    @keyframes artifactEnter {
+
+      to {
+        opacity: 1;
+
+        transform:
+          translate3d(
+            0,
+            0,
+            0
+          )
+          scale(1);
+      }
     }
 
     .artifact-note {
@@ -522,6 +671,15 @@
       letter-spacing: 0.28em;
 
       text-transform: uppercase;
+
+      opacity: 0;
+
+      animation:
+        fadeRise
+        900ms
+        var(--ease)
+        950ms
+        forwards;
     }
 
     .hero-copy {
@@ -565,6 +723,50 @@
         );
 
       background: var(--red);
+
+      transform-origin: left;
+
+      transform:
+        scaleX(0);
+
+      animation:
+        lineDraw
+        850ms
+        var(--ease)
+        300ms
+        forwards;
+    }
+
+    @keyframes lineDraw {
+      to {
+        transform:
+          scaleX(1);
+      }
+    }
+
+    @keyframes fadeRise {
+
+      from {
+        opacity: 0;
+
+        transform:
+          translate3d(
+            0,
+            14px,
+            0
+          );
+      }
+
+      to {
+        opacity: 1;
+
+        transform:
+          translate3d(
+            0,
+            0,
+            0
+          );
+      }
     }
 
     .hero h1 {
@@ -584,6 +786,15 @@
       letter-spacing: 0.115em;
 
       text-transform: uppercase;
+
+      opacity: 0;
+
+      animation:
+        fadeRise
+        1000ms
+        var(--ease)
+        450ms
+        forwards;
     }
 
     .motto {
@@ -607,6 +818,15 @@
       line-height: 1.7;
 
       text-transform: uppercase;
+
+      opacity: 0;
+
+      animation:
+        fadeRise
+        900ms
+        var(--ease)
+        650ms
+        forwards;
     }
 
     .intro {
@@ -624,6 +844,15 @@
         );
 
       line-height: 1.9;
+
+      opacity: 0;
+
+      animation:
+        fadeRise
+        900ms
+        var(--ease)
+        820ms
+        forwards;
     }
 
     .enter {
@@ -654,6 +883,15 @@
 
       text-decoration: none;
       text-transform: uppercase;
+
+      opacity: 0;
+
+      animation:
+        fadeRise
+        900ms
+        var(--ease)
+        980ms
+        forwards;
 
       transition:
         border-color
@@ -733,7 +971,6 @@
 
     .about-statement em {
       color: var(--bone-muted);
-
       font-style: normal;
     }
 
@@ -826,7 +1063,7 @@
 
 
     /* =========================================================
-       02 — THE COMPANY
+       02 — COMPANY
        ========================================================= */
 
     .company {
@@ -1051,7 +1288,7 @@
 
 
     /* =========================================================
-       03 — THE SHARE
+       03 — SHARE
        ========================================================= */
 
     .share {
@@ -1396,7 +1633,7 @@
 
 
     /* =========================================================
-       04 — THE MARK
+       04 — MARK
        ========================================================= */
 
     .mark {
@@ -1516,6 +1753,10 @@
       filter:
         brightness(0.91)
         contrast(1.02);
+
+      will-change:
+        transform,
+        opacity;
     }
 
     .mark-content {
@@ -1680,9 +1921,6 @@
         display: block;
       }
 
-
-      /* HERO */
-
       .hero {
         min-height: auto;
 
@@ -1752,9 +1990,6 @@
         margin-top: 33px;
       }
 
-
-      /* SECTIONS */
-
       .about,
       .company,
       .share,
@@ -1772,9 +2007,6 @@
       .section-number::after {
         width: 35px;
       }
-
-
-      /* ABOUT */
 
       .about-statement {
         margin-top: 42px;
@@ -1808,9 +2040,6 @@
 
         padding-top: 34px;
       }
-
-
-      /* COMPANY */
 
       .company-heading {
         margin-top: 42px;
@@ -1884,9 +2113,6 @@
 
         font-size: 1.45rem;
       }
-
-
-      /* SHARE */
 
       .share-heading {
         margin-top: 42px;
@@ -1998,9 +2224,6 @@
           );
       }
 
-
-      /* MARK */
-
       .mark-heading {
         margin-top: 42px;
 
@@ -2075,10 +2298,6 @@
     }
 
 
-    /* =========================================================
-       SMALL MOBILE
-       ========================================================= */
-
     @media
     (max-width: 390px) {
 
@@ -2124,7 +2343,19 @@
       *,
       *::before,
       *::after {
+        animation: none !important;
         transition: none !important;
+      }
+
+      .reveal,
+      .wayward-artifact,
+      .artifact-note,
+      .hero h1,
+      .motto,
+      .intro,
+      .enter {
+        opacity: 1 !important;
+        transform: none !important;
       }
     }
 
@@ -2135,9 +2366,7 @@
 <body>
 
 
-  <!-- =======================================================
-       HEADER
-       ======================================================= -->
+  <!-- HEADER -->
 
   <header class="site-header">
 
@@ -2150,19 +2379,19 @@
       aria-label="Primary navigation"
     >
 
-      <a href="#about">
+      <a href="#about" data-section="about">
         Wayward
       </a>
 
-      <a href="#company">
+      <a href="#company" data-section="company">
         Company
       </a>
 
-      <a href="#share">
+      <a href="#share" data-section="share">
         Share
       </a>
 
-      <a href="#mark">
+      <a href="#mark" data-section="mark">
         Mark
       </a>
 
@@ -2175,9 +2404,7 @@
   </header>
 
 
-  <!-- =======================================================
-       HERO
-       ======================================================= -->
+  <!-- HERO -->
 
   <main class="hero">
 
@@ -2231,9 +2458,7 @@
   </main>
 
 
-  <!-- =======================================================
-       01 — WAYWARD
-       ======================================================= -->
+  <!-- 01 — WAYWARD -->
 
   <section
     class="about"
@@ -2242,12 +2467,15 @@
 
     <div class="section-shell">
 
-      <div class="section-number">
+      <div class="section-number reveal">
         01 — Wayward
       </div>
 
 
-      <h2 class="about-statement">
+      <h2
+        class="about-statement reveal"
+        style="--delay: 90ms;"
+      >
         No one asks where your road began.
         <em>
           Only where you're going next.
@@ -2257,14 +2485,20 @@
 
       <div class="about-body">
 
-        <div class="section-kicker">
+        <div
+          class="section-kicker reveal"
+          style="--delay: 100ms;"
+        >
           A company of the Horde
         </div>
 
 
         <div class="about-copy">
 
-          <p>
+          <p
+            class="reveal"
+            style="--delay: 130ms;"
+          >
             Wayward is built for players who want
             something more personal than another name
             above their character and something less
@@ -2272,7 +2506,10 @@
             they have to play.
           </p>
 
-          <p>
+          <p
+            class="reveal"
+            style="--delay: 170ms;"
+          >
             We dungeon. We explore. We gather,
             craft, fight, trade, roleplay and help
             one another get where we're going.
@@ -2281,7 +2518,10 @@
             connects them.
           </p>
 
-          <p>
+          <p
+            class="reveal"
+            style="--delay: 210ms;"
+          >
             You don't have to arrive with a story
             already written. You don't have to fit
             someone else's mold. What matters is
@@ -2290,7 +2530,10 @@
           </p>
 
 
-          <div class="carry section-rule">
+          <div
+            class="carry section-rule reveal"
+            style="--delay: 120ms;"
+          >
 
             <p>
               Everyone carries something.
@@ -2311,9 +2554,7 @@
   </section>
 
 
-  <!-- =======================================================
-       02 — THE COMPANY
-       ======================================================= -->
+  <!-- 02 — COMPANY -->
 
   <section
     class="company"
@@ -2322,18 +2563,24 @@
 
     <div class="section-shell">
 
-      <div class="section-number">
+      <div class="section-number reveal">
         02 — The Company
       </div>
 
 
-      <h2 class="company-heading">
+      <h2
+        class="company-heading reveal"
+        style="--delay: 90ms;"
+      >
         Many roads.<br>
         One company.
       </h2>
 
 
-      <p class="company-intro">
+      <p
+        class="company-intro reveal"
+        style="--delay: 140ms;"
+      >
         Wayward isn't built around titles.
         Authority stays simple, responsibility
         stays visible, and most of us stand
@@ -2343,8 +2590,9 @@
 
       <div class="ranks">
 
-
-        <article class="rank rank-waylord">
+        <article
+          class="rank rank-waylord reveal"
+        >
 
           <div class="rank-number">
             I
@@ -2364,7 +2612,7 @@
         </article>
 
 
-        <article class="rank rank-hands">
+        <article class="rank rank-hands reveal">
 
           <div class="rank-number">
             II
@@ -2385,7 +2633,7 @@
         </article>
 
 
-        <article class="rank">
+        <article class="rank reveal">
 
           <div class="rank-number">
             III
@@ -2406,7 +2654,7 @@
         </article>
 
 
-        <article class="rank rank-wayfarers">
+        <article class="rank rank-wayfarers reveal">
 
           <div class="rank-number">
             IV
@@ -2431,11 +2679,14 @@
 
       <div class="company-close">
 
-        <div class="section-kicker">
+        <div class="section-kicker reveal">
           The road inward
         </div>
 
-        <p>
+        <p
+          class="reveal"
+          style="--delay: 100ms;"
+        >
           You arrive a Wayfarer.
           You become Company by becoming
           someone the Company would notice missing.
@@ -2448,9 +2699,7 @@
   </section>
 
 
-  <!-- =======================================================
-       03 — THE SHARE
-       ======================================================= -->
+  <!-- 03 — SHARE -->
 
   <section
     class="share"
@@ -2459,12 +2708,15 @@
 
     <div class="section-shell">
 
-      <div class="section-number">
+      <div class="section-number reveal">
         03 — The Share
       </div>
 
 
-      <h2 class="share-heading">
+      <h2
+        class="share-heading reveal"
+        style="--delay: 90ms;"
+      >
         Everyone carries something.
         <span>
           Everyone draws from what we carry.
@@ -2472,7 +2724,10 @@
       </h2>
 
 
-      <p class="share-intro">
+      <p
+        class="share-intro reveal"
+        style="--delay: 130ms;"
+      >
         The Share is Wayward's common store:
         a small contribution from the Company,
         gathered so the Company can provide for
@@ -2482,8 +2737,7 @@
 
       <div class="ledger">
 
-
-        <div class="ledger-row">
+        <div class="ledger-row reveal">
 
           <div class="ledger-label">
             Coin
@@ -2501,7 +2755,7 @@
         </div>
 
 
-        <div class="ledger-row">
+        <div class="ledger-row reveal">
 
           <div class="ledger-label">
             Materials
@@ -2520,7 +2774,7 @@
         </div>
 
 
-        <div class="ledger-row wayfarer">
+        <div class="ledger-row wayfarer reveal">
 
           <div class="ledger-label">
             Wayfarers
@@ -2543,28 +2797,28 @@
 
       <div class="share-purpose">
 
-        <div class="section-kicker">
+        <div class="section-kicker reveal">
           Where it goes
         </div>
 
 
         <div class="share-purpose-copy">
 
-          <p>
+          <p class="reveal">
             The Share isn't payment to Wayward's
             leadership. Coin and materials placed
             in the guild bank exist to serve the
             people contributing to it.
           </p>
 
-          <p>
+          <p class="reveal">
             What the Company gathers can be turned
             back toward whatever helps the Company
             move forward.
           </p>
 
 
-          <div class="share-uses">
+          <div class="share-uses reveal">
 
             <span>Crafting</span>
             <span>Consumables</span>
@@ -2580,7 +2834,7 @@
       </div>
 
 
-      <div class="grace section-rule">
+      <div class="grace section-rule reveal">
 
         <div class="section-kicker">
           No debts
@@ -2597,7 +2851,7 @@
       </div>
 
 
-      <div class="share-close">
+      <div class="share-close reveal">
 
         <p>
           The bank belongs to no one.
@@ -2617,9 +2871,7 @@
   </section>
 
 
-  <!-- =======================================================
-       04 — THE MARK
-       ======================================================= -->
+  <!-- 04 — MARK -->
 
   <section
     class="mark"
@@ -2628,12 +2880,15 @@
 
     <div class="section-shell">
 
-      <div class="section-number">
+      <div class="section-number reveal">
         04 — The Mark
       </div>
 
 
-      <h2 class="mark-heading">
+      <h2
+        class="mark-heading reveal"
+        style="--delay: 90ms;"
+      >
         Some things are recognized.
         <span>
           Others are given.
@@ -2654,27 +2909,27 @@
 
       <div class="mark-content">
 
-        <div class="section-kicker">
+        <div class="section-kicker reveal">
           The Wayward Mark
         </div>
 
 
         <div class="mark-copy">
 
-          <h3>
+          <h3 class="reveal">
             A lantern.
             A feather.
             A road still ahead.
           </h3>
 
-          <p>
+          <p class="reveal">
             The lantern is Wayward's mark:
             something carried into the dark,
             not a promise that the road ahead
             will be easy.
           </p>
 
-          <p>
+          <p class="reveal">
             Beneath it hangs a worn feather.
             Weathered. Imperfect. Still moving.
             No two roads leave the same marks
@@ -2686,7 +2941,7 @@
       </div>
 
 
-      <div class="feather-story section-rule">
+      <div class="feather-story section-rule reveal">
 
         <div class="section-kicker">
           The Feather
@@ -2703,7 +2958,7 @@
       </div>
 
 
-      <div class="mark-close">
+      <div class="mark-close reveal">
 
         <p>
           You don't carry the mark because you joined.
@@ -2722,6 +2977,244 @@
 
   </section>
 
+
+  <!-- =========================================================
+       MOTION SCRIPT
+       ========================================================= -->
+
+  <script>
+
+    const reducedMotion =
+      window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+
+    /* -----------------------------------------
+       Scroll reveal
+       ----------------------------------------- */
+
+    if (!reducedMotion) {
+
+      const revealObserver =
+        new IntersectionObserver(
+
+          (entries, observer) => {
+
+            entries.forEach(entry => {
+
+              if (entry.isIntersecting) {
+
+                entry.target.classList.add(
+                  "is-visible"
+                );
+
+                observer.unobserve(
+                  entry.target
+                );
+
+              }
+
+            });
+
+          },
+
+          {
+            threshold: 0.12,
+            rootMargin:
+              "0px 0px -8% 0px"
+          }
+
+        );
+
+
+      document
+        .querySelectorAll(".reveal")
+        .forEach(element => {
+
+          revealObserver.observe(
+            element
+          );
+
+        });
+
+    } else {
+
+      document
+        .querySelectorAll(".reveal")
+        .forEach(element => {
+
+          element.classList.add(
+            "is-visible"
+          );
+
+        });
+
+    }
+
+
+    /* -----------------------------------------
+       Active navigation section
+       ----------------------------------------- */
+
+    const navLinks =
+      document.querySelectorAll(
+        ".site-nav a[data-section]"
+      );
+
+    const sections =
+      document.querySelectorAll(
+        "#about, #company, #share, #mark"
+      );
+
+
+    const sectionObserver =
+      new IntersectionObserver(
+
+        entries => {
+
+          entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+              const id =
+                entry.target.id;
+
+              navLinks.forEach(link => {
+
+                link.classList.toggle(
+                  "active",
+                  link.dataset.section === id
+                );
+
+              });
+
+            }
+
+          });
+
+        },
+
+        {
+          rootMargin:
+            "-30% 0px -55% 0px",
+
+          threshold: 0
+        }
+
+      );
+
+
+    sections.forEach(section => {
+
+      sectionObserver.observe(
+        section
+      );
+
+    });
+
+
+    /* -----------------------------------------
+       Artifact parallax
+       ----------------------------------------- */
+
+    if (!reducedMotion) {
+
+      const heroArtifact =
+        document.querySelector(
+          ".wayward-artifact"
+        );
+
+      const feather =
+        document.querySelector(
+          ".feather-image"
+        );
+
+      let ticking = false;
+
+
+      function updateParallax() {
+
+        const scrollY =
+          window.scrollY;
+
+        if (heroArtifact) {
+
+          const heroShift =
+            Math.min(
+              scrollY * 0.025,
+              10
+            );
+
+          heroArtifact.style.transform =
+            `translate3d(0, ${heroShift}px, 0)`;
+
+        }
+
+
+        if (feather) {
+
+          const rect =
+            feather.getBoundingClientRect();
+
+          const viewportCenter =
+            window.innerHeight / 2;
+
+          const elementCenter =
+            rect.top +
+            rect.height / 2;
+
+          const difference =
+            elementCenter -
+            viewportCenter;
+
+          const shift =
+            Math.max(
+              -9,
+              Math.min(
+                9,
+                difference * -0.018
+              )
+            );
+
+          feather.style.transform =
+            `translate3d(0, ${shift}px, 0) rotate(${shift * 0.035}deg)`;
+
+        }
+
+        ticking = false;
+
+      }
+
+
+      window.addEventListener(
+        "scroll",
+        () => {
+
+          if (!ticking) {
+
+            window.requestAnimationFrame(
+              updateParallax
+            );
+
+            ticking = true;
+
+          }
+
+        },
+
+        {
+          passive: true
+        }
+
+      );
+
+
+      updateParallax();
+
+    }
+
+  </script>
 
 </body>
 
