@@ -9,27 +9,37 @@
     content="width=device-width, initial-scale=1.0"
   >
 
+  <meta
+    name="theme-color"
+    content="#0c0c0b"
+  >
+
   <title>Wayward | WoW Forever</title>
 
   <style>
 
     /* =========================
-       WAYWARD — COLOR SYSTEM
+       WAYWARD
        ========================= */
 
     :root {
       --black: #0c0c0b;
+      --deep-black: #090908;
       --charcoal: #151412;
+
       --bone: #d2c6ae;
       --bone-bright: #ddd1ba;
       --bone-muted: #918674;
+
       --red: #7b2820;
+
       --line: #302d28;
+      --line-light: #554e43;
     }
 
 
     /* =========================
-       BASIC RESET
+       RESET
        ========================= */
 
     * {
@@ -45,9 +55,17 @@
 
     body {
       min-height: 100vh;
+
+      overflow-x: hidden;
+
       background: var(--black);
+
       color: var(--bone);
-      font-family: Georgia, "Times New Roman", serif;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
     }
 
 
@@ -56,6 +74,9 @@
        ========================= */
 
     header {
+      position: relative;
+      z-index: 10;
+
       height: 78px;
 
       display: flex;
@@ -64,18 +85,21 @@
 
       padding: 0 7vw;
 
-      background: rgba(12, 12, 11, 0.98);
+      background: var(--black);
 
-      border-bottom: 1px solid var(--line);
+      border-bottom:
+        1px solid
+        var(--line);
     }
 
     .brand {
       color: var(--bone);
 
-      font-size: 1.3rem;
+      font-size: 1.25rem;
       font-weight: 400;
 
-      letter-spacing: 0.35em;
+      letter-spacing: 0.34em;
+
       text-transform: uppercase;
     }
 
@@ -90,13 +114,15 @@
       color: var(--bone-muted);
 
       text-decoration: none;
+
       text-transform: uppercase;
 
       letter-spacing: 0.22em;
 
-      font-size: 0.72rem;
+      font-size: 0.7rem;
 
-      transition: color 0.2s ease;
+      transition:
+        color 0.2s ease;
     }
 
     nav a:hover {
@@ -109,20 +135,27 @@
        ========================= */
 
     .hero {
-      min-height: calc(100vh - 78px);
+      min-height:
+        calc(100vh - 78px);
 
       display: grid;
 
-      grid-template-columns: 1.08fr 0.92fr;
+      grid-template-columns:
+        1.05fr
+        0.95fr;
+
+      background: var(--black);
     }
 
 
     /* =========================
-       ARTIFACT SIDE
+       ARTIFACT
        ========================= */
 
     .artifact {
       position: relative;
+
+      min-width: 0;
 
       overflow: hidden;
 
@@ -130,80 +163,88 @@
       align-items: center;
       justify-content: center;
 
-      padding: 5vw;
+      padding: 4vw;
 
       background:
         radial-gradient(
-          circle at center,
+          ellipse at 52% 47%,
           #1b1814 0%,
-          #12110f 55%,
-          #0c0c0b 100%
+          #12110f 48%,
+          #0c0c0b 78%
         );
     }
 
     .wayward-artifact {
       display: block;
 
-      width: min(430px, 82%);
-      height: auto;
+      width:
+        min(
+          500px,
+          88%
+        );
 
-      max-height: 75vh;
+      max-height: 78vh;
+
+      height: auto;
 
       object-fit: contain;
 
       filter:
         contrast(0.98)
-        brightness(0.90);
+        brightness(0.91);
 
-      transform: rotate(-1deg);
+      transform:
+        rotate(-0.7deg);
     }
 
     .artifact-note {
       position: absolute;
 
-      bottom: 38px;
       left: 7vw;
+      bottom: 34px;
 
       color: var(--bone-muted);
 
-      font-size: 0.65rem;
+      font-size: 0.61rem;
 
-      letter-spacing: 0.22em;
+      letter-spacing: 0.24em;
 
       text-transform: uppercase;
     }
 
 
     /* =========================
-       TEXT SIDE
+       HERO COPY
        ========================= */
 
     .hero-copy {
+      position: relative;
+
+      min-width: 0;
+
       display: flex;
-
       flex-direction: column;
-
       justify-content: center;
 
       padding:
-        10vw
         9vw
-        10vw
-        7vw;
+        8vw
+        9vw
+        6vw;
 
       background:
         radial-gradient(
-          circle at 0% 50%,
-          #181612 0%,
-          var(--black) 55%
+          ellipse at 0% 48%,
+          #171511 0%,
+          #0c0c0b 58%
         );
     }
 
     .eyebrow {
-      width: 38px;
+      width: 42px;
       height: 2px;
 
-      margin-bottom: 28px;
+      margin-bottom: 32px;
 
       background: var(--red);
     }
@@ -213,16 +254,16 @@
 
       font-size:
         clamp(
-          3.2rem,
-          7vw,
-          7.4rem
+          3.4rem,
+          6.4vw,
+          7rem
         );
 
       font-weight: 400;
 
-      line-height: 0.9;
+      line-height: 0.92;
 
-      letter-spacing: 0.16em;
+      letter-spacing: 0.13em;
 
       text-transform: uppercase;
     }
@@ -234,77 +275,89 @@
 
       font-size:
         clamp(
-          0.85rem,
-          1.2vw,
-          1.15rem
+          0.82rem,
+          1.1vw,
+          1.08rem
         );
 
-      letter-spacing: 0.42em;
+      letter-spacing: 0.4em;
+
+      line-height: 1.7;
 
       text-transform: uppercase;
     }
 
     .intro {
-      max-width: 470px;
+      max-width: 450px;
 
-      margin-top: 28px;
+      margin-top: 27px;
 
       color: var(--bone-muted);
 
-      font-size: 1rem;
+      font-size: 0.98rem;
 
-      line-height: 1.8;
+      line-height: 1.85;
     }
 
 
     /* =========================
-       ENTER BUTTON
+       ENTER
        ========================= */
 
     .enter {
-      display: inline-block;
+      position: relative;
+
+      display: inline-flex;
+
+      align-items: center;
 
       width: fit-content;
 
-      margin-top: 42px;
+      margin-top: 38px;
 
       padding:
-        18px
-        28px;
-
-      border: 1px solid #625a4d;
+        15px
+        0
+        11px;
 
       color: var(--bone);
+
+      border-bottom:
+        1px solid
+        var(--line-light);
 
       text-decoration: none;
 
       text-transform: uppercase;
 
-      letter-spacing: 0.28em;
+      letter-spacing: 0.27em;
 
-      font-size: 0.7rem;
+      font-size: 0.67rem;
 
       transition:
-        border-color 0.2s ease,
-        background 0.2s ease;
+        color 0.2s ease,
+        border-color 0.2s ease;
     }
 
     .enter span {
-      margin-left: 14px;
+      margin-left: 17px;
 
       color: var(--red);
+
+      transition:
+        transform 0.2s ease;
     }
 
     .enter:hover {
-      border-color: var(--bone-muted);
+      color: var(--bone-bright);
 
-      background:
-        rgba(
-          255,
-          255,
-          255,
-          0.025
-        );
+      border-color:
+        var(--bone-muted);
+    }
+
+    .enter:hover span {
+      transform:
+        translateX(4px);
     }
 
 
@@ -312,10 +365,11 @@
        MOBILE
        ========================= */
 
-    @media (max-width: 760px) {
+    @media
+    (max-width: 760px) {
 
       header {
-        height: 66px;
+        height: 64px;
 
         padding:
           0
@@ -323,13 +377,13 @@
       }
 
       .brand {
-        font-size: 1rem;
+        font-size: 0.94rem;
 
-        letter-spacing: 0.3em;
+        letter-spacing: 0.29em;
       }
 
       nav {
-        gap: 16px;
+        gap: 0;
       }
 
       nav a {
@@ -338,10 +392,14 @@
 
       nav a:last-child {
         display: block;
+
+        font-size: 0.62rem;
+
+        letter-spacing: 0.2em;
       }
 
 
-      /* Stack artifact over text */
+      /* HERO STACK */
 
       .hero {
         min-height: auto;
@@ -355,88 +413,141 @@
       /* ARTIFACT */
 
       .artifact {
-        min-height: 40vh;
+        min-height: 42vh;
 
         padding:
-          35px
-          25px
-          45px;
+          24px
+          18px
+          44px;
+
+        background:
+          radial-gradient(
+            ellipse at center,
+            #191713 0%,
+            #11100e 58%,
+            #0c0c0b 100%
+          );
       }
 
       .wayward-artifact {
         width:
           min(
-            245px,
-            67vw
+            300px,
+            78vw
           );
 
-        max-height: 34vh;
+        max-height: 38vh;
 
         object-fit: contain;
 
-        transform: rotate(-1deg);
+        transform:
+          rotate(-0.7deg);
       }
 
       .artifact-note {
-        left: 22px;
+        left: 24px;
+        bottom: 16px;
 
-        bottom: 18px;
+        font-size: 0.55rem;
 
-        font-size: 0.58rem;
-
-        letter-spacing: 0.2em;
+        letter-spacing: 0.22em;
       }
 
 
-      /* TEXT */
+      /* COPY */
 
       .hero-copy {
-        min-height: 52vh;
+        min-height: 50vh;
 
         padding:
-          50px
-          26px
-          75px;
+          52px
+          25px
+          72px;
+
+        background:
+          linear-gradient(
+            to bottom,
+            #0d0d0b 0%,
+            #0c0c0b 22%,
+            #0c0c0b 100%
+          );
       }
 
       .eyebrow {
-        margin-bottom: 26px;
+        width: 39px;
+
+        margin-bottom: 30px;
       }
 
       h1 {
+        max-width: 100%;
+
         font-size:
           clamp(
-            3rem,
-            16vw,
-            5rem
+            2.9rem,
+            13.2vw,
+            4.35rem
           );
 
-        letter-spacing: 0.08em;
+        line-height: 0.95;
+
+        letter-spacing: 0.075em;
+
+        white-space: nowrap;
       }
 
       .motto {
-        margin-top: 30px;
+        margin-top: 31px;
 
-        line-height: 1.7;
+        font-size: 0.8rem;
 
         letter-spacing: 0.3em;
+
+        line-height: 1.7;
       }
 
       .intro {
+        max-width: 340px;
+
         margin-top: 24px;
 
-        font-size: 0.95rem;
+        font-size: 0.94rem;
 
-        line-height: 1.8;
+        line-height: 1.85;
       }
 
       .enter {
-        margin-top: 36px;
+        margin-top: 31px;
 
         padding:
-          17px
-          23px;
+          13px
+          0
+          10px;
+
+        font-size: 0.64rem;
+
+        letter-spacing: 0.25em;
       }
+    }
+
+
+    /* =========================
+       VERY SMALL PHONES
+       ========================= */
+
+    @media
+    (max-width: 390px) {
+
+      h1 {
+        font-size: 2.85rem;
+
+        letter-spacing: 0.06em;
+      }
+
+      .wayward-artifact {
+        width: 275px;
+      }
+
     }
 
   </style>
@@ -446,9 +557,7 @@
 <body>
 
 
-  <!-- =======================
-       NAVIGATION
-       ======================= -->
+  <!-- HEADER -->
 
   <header>
 
@@ -479,14 +588,12 @@
   </header>
 
 
-  <!-- =======================
-       WAYWARD HERO
-       ======================= -->
+  <!-- HERO -->
 
   <main class="hero">
 
 
-    <!-- ARTIFACT -->
+    <!-- WAYWARD ARTIFACT -->
 
     <section class="artifact">
 
@@ -503,7 +610,7 @@
     </section>
 
 
-    <!-- INTRODUCTION -->
+    <!-- WAYWARD INTRO -->
 
     <section class="hero-copy">
 
