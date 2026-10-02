@@ -24,7 +24,7 @@
   <style>
 
     /* =========================================================
-       WAYWARD v2.3
+       WAYWARD v2.4
        FIND YOUR WAY
        ========================================================= */
 
@@ -2263,8 +2263,6 @@
         );
     }
 
-    /* distant lantern glow */
-
     .join::before {
       content: "";
 
@@ -2374,8 +2372,6 @@
     }
 
 
-    /* IMMERSION STATEMENT */
-
     .immersion {
       margin-top:
         clamp(
@@ -2438,8 +2434,6 @@
       color: var(--bone-muted);
     }
 
-
-    /* WHAT WE ASK */
 
     .join-expectations {
       display: grid;
@@ -2523,8 +2517,6 @@
     }
 
 
-    /* WAYFARER REMINDER */
-
     .join-wayfarer {
       margin-top:
         clamp(
@@ -2554,8 +2546,6 @@
       line-height: 1.65;
     }
 
-
-    /* FINAL INVITATION */
 
     .join-invitation {
       margin-top:
@@ -2630,7 +2620,17 @@
 
       letter-spacing: 0.25em;
 
+      text-decoration: none;
       text-transform: uppercase;
+
+      transition:
+        color 180ms ease,
+        border-color 180ms ease;
+    }
+
+    .join-action:hover {
+      color: var(--bone);
+      border-color: var(--bone-muted);
     }
 
     .join-action span {
@@ -2656,8 +2656,6 @@
       text-transform: uppercase;
     }
 
-
-    /* FOOTER */
 
     .site-footer {
       position: relative;
@@ -3143,8 +3141,6 @@
       }
 
 
-      /* JOIN */
-
       .join::before {
         width: 135vw;
         height: 135vw;
@@ -3286,10 +3282,6 @@
     }
 
 
-    /* =========================================================
-       REDUCED MOTION
-       ========================================================= */
-
     @media
     (prefers-reduced-motion: reduce) {
 
@@ -3331,8 +3323,6 @@
 <body>
 
 
-  <!-- HEADER -->
-
   <header class="site-header">
 
     <div class="brand">
@@ -3372,8 +3362,6 @@
 
   </header>
 
-
-  <!-- HERO -->
 
   <main class="hero">
 
@@ -3424,8 +3412,6 @@
 
   </main>
 
-
-  <!-- 01 — WAYWARD -->
 
   <section class="about" id="about">
 
@@ -3498,8 +3484,6 @@
 
   </section>
 
-
-  <!-- 02 — COMPANY -->
 
   <section class="company" id="company">
 
@@ -3618,8 +3602,6 @@
 
   </section>
 
-
-  <!-- 03 — SHARE -->
 
   <section class="share" id="share">
 
@@ -3778,8 +3760,6 @@
   </section>
 
 
-  <!-- 04 — MARK -->
-
   <section class="mark" id="mark">
 
     <div class="section-shell">
@@ -3874,8 +3854,6 @@
 
   </section>
 
-
-  <!-- 05 — ON THE ROAD -->
 
   <section class="road" id="road">
 
@@ -4078,8 +4056,6 @@
   </section>
 
 
-  <!-- 06 — FIND YOUR WAY -->
-
   <section class="join" id="join">
 
     <div class="section-shell">
@@ -4260,13 +4236,19 @@
           you'd like to stay.
         </p>
 
-        <div class="join-action">
+        <a
+          class="join-action"
+          href="https://discord.gg/ttmZVzKnaK"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Join the Wayward Discord"
+        >
           Enter the Wayward Discord
           <span>→</span>
-        </div>
+        </a>
 
         <small class="join-note">
-          Discord opening soon · come talk to us first
+          Discord now open · come meet the Company
         </small>
 
       </div>
@@ -4288,8 +4270,6 @@
 
   </section>
 
-
-  <!-- MOTION SCRIPT -->
 
   <script>
 
@@ -4358,8 +4338,6 @@
     }
 
 
-    /* ACTIVE NAV */
-
     const navLinks =
       document.querySelectorAll(
         ".site-nav a[data-section]"
@@ -4416,8 +4394,6 @@
 
     });
 
-
-    /* PARALLAX */
 
     if (!reducedMotion) {
 
